@@ -12,3 +12,5 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent {
   title = 'portfolio';
 }
+
+//hier für wir alle components zusammen. Der Hintergrund ist in der Main TS/Scss
