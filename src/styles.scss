@@ -2,7 +2,9 @@
 @font-face {
     font-family: Karla;
     src: url('./assets/fonts/Karla/Karla-VariableFont_wght.ttf');
+}
 
+@font-face {
     font-family: Fira Code;
     src: url('./assets/fonts/Fira_Code/FiraCode-VariableFont_wght.ttf');
 }
@@ -11,4 +13,5 @@ body {
     margin: 0;
     box-sizing: border-box;
     background-color: #1c1c1c;
+    font-family: Fira Code;
 }
