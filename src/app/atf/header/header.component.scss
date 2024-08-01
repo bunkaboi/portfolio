@@ -1,0 +1,78 @@
+@import './../../../styles.scss';
+
+.main-container {
+    @include dFlex(space-between, center);
+    margin-left: 96px;
+    margin-right: 96px;
+}
+
+.navbar {
+    @include size(409px, 28px);
+    @include dFlex(space-between, center);
+
+    a {
+        font-family: Fira Code;
+        font-size: 20px;
+        font-weight: 400;
+        text-decoration: none;
+        color: $fontWhite;
+
+        &:hover {
+            color: $primary;
+        }
+    }
+}
+
+.language-switch {
+    @include size(84px, 28px);
+    @include borderStyling(100px, $primary);
+    @include dFlex(space-between, center);
+    font-family: Fira Code;
+    font-size: 16px;
+
+    .language-active {
+        @include size(44px, 28px);
+        border-radius: 100px;
+        background-color: $primary;
+        color: $fontWhite;
+        @include dFlex();
+    }
+
+    .language-inactive {
+        @include size(44px, 28px);
+        color: $primary;
+        opacity: 50%;
+        @include dFlex();
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: end;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    p {
+        margin: 0px;
+    }
+
+    .signet {
+        rotate: -20deg;
+        display: flex;
+        color: $primary;
+        font-size: 54px;
+
+        #B {
+            rotate: -20deg;
+            transform: translate(-16px, -9px);
+            font-size: 56px;
+        }
+    }
+
+    .name {
+        text-align: center;
+        padding-bottom: 4px;
+        font-size: 20px;
+        transform: translateX(-14px);
+
+    }
+}

@@ -1,18 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
-@font-face {
-    font-family: Karla;
-    src: url('./assets/fonts/Karla/Karla-VariableFont_wght.ttf');
-}
-
-@font-face {
-    font-family: Fira Code;
-    src: url('./assets/fonts/Fira_Code/FiraCode-VariableFont_wght.ttf');
-}
+@import './shared/colors.scss';
+@import './shared/fonts.scss';
+@import './shared/mixin.scss';
 
 body {
     margin: 0;
     box-sizing: border-box;
-    background-color: #1c1c1c;
-    background-color: #fdffaf;
-    color: white;
+    background-color: $background;
+    color: $fontWhite;
 }

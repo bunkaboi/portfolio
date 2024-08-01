@@ -1,11 +1,75 @@
+@import './../../styles.scss';
+
 .atf-main-container {
     width: 100vw;
     max-width: 100%;
     height: 100vh;
-    
+    background: linear-gradient(210deg, $gradientGreen, $gradientGreen 20%, $background 60%);
+    @include dFlex();
+    flex-direction: column;
 }
 
-.background {
-    background-image: url('./../../assets/19.\ Skill\ set\ Background.png');
-    background-size: contain;
+.header {
+    width: 100%;
+    position: absolute;
+    top: 48px;
+}
+
+.title {
+    @include dFlex();
+    flex-direction: column;
+
+    .job {
+        font-family: Fira Code;
+        font-size: 40px;
+        color: $atfWhite;
+        margin: 0;
+    }
+
+    .name {
+        font-family: Karla;
+        font-weight: 700;
+        font-size: 128px;
+        color: $atfWhite;
+        margin: 0;
+    }
+
+    .btn-container {
+        margin-top: 48px;
+        @include dFlex();
+        gap: 56px;
+
+        .btn-style {
+            @include dFlex();
+            @include borderStyling(100px, $fontWhite);
+            font-family: Karla;
+            font-size: 18px;
+            color: $fontWhite;
+            padding: 0 24px 0 24px;
+            height: 48px;
+
+            &:hover {
+                border-color: $primary;
+                color: $primary;
+            }
+        }
+    }
+}
+
+.bottom-section {
+    position: absolute;
+    bottom: 0px;
+    display: flex;
+
+    .arrow {
+        
+        .btn-arrow {
+            @include size(30px, 48px);
+            @include borderStyling(100px, $primary);
+        }
+    }
+
+    .prompter {
+        rotate: -10deg;
+    }
 }

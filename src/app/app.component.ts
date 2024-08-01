@@ -6,14 +6,13 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { ColleaguesComponent } from './colleagues/colleagues.component';
 import { ContactMeComponent } from './contact-me/contact-me.component';
 import { FooterComponent } from './footer/footer.component';
-import { HeaderComponent } from './header/header.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { SkillSetComponent } from './skill-set/skill-set.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, AtfComponent, AboutMeComponent, ColleaguesComponent, ContactMeComponent, FooterComponent, HeaderComponent, PortfolioComponent, SkillSetComponent],
+  imports: [CommonModule, RouterOutlet, AtfComponent, AboutMeComponent, ColleaguesComponent, ContactMeComponent, FooterComponent, PortfolioComponent, SkillSetComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
