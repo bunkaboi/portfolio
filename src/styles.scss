@@ -9,3 +9,17 @@ body {
     color: $fontWhite;
     overflow-x: hidden;
 }
+
+h5 {
+    font-family: Karla;
+    font-size: 24px;
+    font-weight: 500;
+    color: $primary;
+}
+
+h2 {
+    font-family: Fira Code;
+    font-size: 64px;
+    font-weight: 700;
+    color: $primary;
+}

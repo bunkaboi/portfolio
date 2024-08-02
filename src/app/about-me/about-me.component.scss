@@ -1,7 +1,40 @@
-@import url('./../../styles.scss');
+@import './../../styles.scss';
 
-p {
-    font-family: 'Karla';
-    color: rgb(105, 105, 1);
-    font-size: 24px;
+.main-container {
+
+    .me {
+        @include size(568px, 568px);
+        object-fit: cover;
+        border-radius: 30px;
+    }
+
+    .text-container {
+
+
+        .text-box {
+            @include size(568px, 568px);
+            @include borderStyling(30px, $primary);
+            background-color: $primary;
+
+            p {
+                font-family: Karla;
+                font-size: 18px;
+                color: $fontWhite;
+                line-height: 21.6px;
+            }
+
+            bullet-points {
+                @include dFlex(space-between, flex-start);
+
+                .icon {
+                    @include size(32px, 32px)
+                }
+
+                p {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+
 }
