@@ -59,17 +59,51 @@
 .bottom-section {
     position: absolute;
     bottom: 0px;
-    display: flex;
+    @include dFlex(space-between, flex-end);
+    width: calc(100vw - 192px);
+    max-width: 100%;
 
     .arrow {
-        
+        @include size(auto, 312px);
+        @include dFlex(space-between, center);
+        flex-direction: column;
+
         .btn-arrow {
             @include size(30px, 48px);
             @include borderStyling(100px, $primary);
+            @include dFlex();
         }
     }
 
-    .prompter {
-        rotate: -10deg;
+    .contact {
+        @include dFlex();
+        flex-direction: column;
+        gap: 24px;
+
+        .email {
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+
+            a {
+                text-decoration: none;
+                color: $fontWhite;
+                font-family: Karla;
+            }
+        }
+
+        .socialmedia {
+            @include size(32px, 76px);
+            @include dFlex(space-between, center);
+            flex-direction: column;
+        }
+        img {
+            @include size(100%, auto);
+        }
     }
+}
+
+.prompter {
+    position: absolute;
+    bottom: 0px;
+    rotate: -10deg;
 }

@@ -48,31 +48,18 @@
 
 .logo {
     display: flex;
-    align-items: end;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    align-items: center;
+    font-family:  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
     p {
         margin: 0px;
     }
 
-    .signet {
-        rotate: -20deg;
-        display: flex;
-        color: $primary;
-        font-size: 54px;
-
-        #B {
-            rotate: -20deg;
-            transform: translate(-16px, -9px);
-            font-size: 56px;
-        }
-    }
-
     .name {
-        text-align: center;
+        text-align: start;
         padding-bottom: 4px;
-        font-size: 20px;
-        transform: translateX(-14px);
-
+        font-size: 30px;
+        margin-left: 8px;
+        line-height: 0.85;
     }
 }
