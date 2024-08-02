@@ -1,6 +1,8 @@
 @import './../../styles.scss';
 
 .main-container {
+    @include dFlex();
+    gap: 50px;
 
     .me {
         @include size(568px, 568px);
@@ -14,7 +16,7 @@
         .text-box {
             @include size(568px, 568px);
             @include borderStyling(30px, $primary);
-            background-color: $primary;
+            background-color: rgba(61,207,182,0.1);
 
             p {
                 font-family: Karla;
@@ -24,7 +26,8 @@
             }
 
             bullet-points {
-                @include dFlex(space-between, flex-start);
+                display: flex;
+                //hier stimmt etwas nicht..
 
                 .icon {
                     @include size(32px, 32px)
