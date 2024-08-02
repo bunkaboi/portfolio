@@ -1,9 +1,27 @@
-marquee {
+@import './../../../styles.scss';
+
+.banner {
     width: 101vw;
-    height: 50px;
-    background-color: grey;
-    backdrop-filter: blur(10px);
-    opacity: 50%;
-    font-family: Fira Code;
-    font-size: 24px;
+    height: 62px;
+    background-color: rgba(255,255,255,0.12);
+    backdrop-filter: blur(3px);
+    @include dFlex();
 }
+
+
+marquee {
+    font-family: Karla;
+    font-size: 38px;
+    color: $primary;
+
+    ul {
+        @include dFlex(space-evenly, center);
+        gap: 120px;
+
+        li span {
+            position: relative;
+            left: 36px;
+        }
+    }
+}
+

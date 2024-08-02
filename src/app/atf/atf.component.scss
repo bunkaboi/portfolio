@@ -38,6 +38,8 @@
         margin-top: 48px;
         @include dFlex();
         gap: 56px;
+        z-index: 1;
+        cursor: pointer;
 
         .btn-style {
             @include dFlex();
@@ -72,7 +74,12 @@
             @include size(30px, 48px);
             @include borderStyling(100px, $primary);
             @include dFlex();
+
+            svg {
+                animation: hopping 1.5s infinite;
+            }
         }
+
     }
 
     .contact {
@@ -88,6 +95,10 @@
                 text-decoration: none;
                 color: $fontWhite;
                 font-family: Karla;
+
+                &:hover {
+                    color: $primary;
+                }
             }
         }
 
@@ -96,6 +107,7 @@
             @include dFlex(space-between, center);
             flex-direction: column;
         }
+
         img {
             @include size(100%, auto);
         }
@@ -104,7 +116,19 @@
 
 .prompter {
     position: absolute;
-    bottom: 50px;
+    bottom: 62px;
     rotate: -3deg;
     overflow: hidden;
+}
+
+@keyframes hopping {
+    0% {
+        transform: translateY(-7px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(-7px);
+    }
 }

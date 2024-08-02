@@ -1,8 +1,8 @@
 <div class="main-container">
     <div class="navbar">
-        <div class="language-switch">
-            <div class="language-active">EN</div>
-            <div class="language-inactive">DE</div>
+        <div (click)="langSwitch()" class="language-switch">
+            <div [ngClass]="{'language-active': langEng == true, 'language-inactive': langEng == false}">EN</div>
+            <div [ngClass]="{'language-active': langDeu == true, 'language-inactive': langDeu == false}">DE</div>
         </div>
         <a href="#aboutme">About me</a>
         <a href="#skills">Skills</a>

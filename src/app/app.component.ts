@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ApplicationModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { AtfComponent } from './atf/atf.component';
@@ -12,7 +12,7 @@ import { SkillSetComponent } from './skill-set/skill-set.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, AtfComponent, AboutMeComponent, ColleaguesComponent, ContactMeComponent, FooterComponent, PortfolioComponent, SkillSetComponent],
+  imports: [CommonModule, RouterOutlet, ApplicationModule, AtfComponent, AboutMeComponent, ColleaguesComponent, ContactMeComponent, FooterComponent, PortfolioComponent, SkillSetComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
