@@ -49,10 +49,15 @@
             color: $fontWhite;
             padding: 0 24px 0 24px;
             height: 48px;
+            overflow: hidden;
 
             &:hover {
                 border-color: $primary;
                 color: $primary;
+            }
+
+            p:hover{
+               animation: marquee 2s infinite;
             }
         }
     }
@@ -131,4 +136,33 @@
     100% {
         transform: translateY(-7px);
     }
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    33% {
+        transform: translateX(-150px);
+    }
+    66% {
+        transform: translateX(-150px);
+        opacity: 1
+    }
+    67% {
+        transform: translateX(-150px);
+        opacity: 0
+    }
+    68% {
+        transform: translateX(150px);
+        opacity: 0
+    }
+    69% {
+        transform: translateX(150px);
+        opacity: 1
+    }
+    100% {
+        transform: translateX(0);
+    }
+
 }

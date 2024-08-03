@@ -1,40 +1,72 @@
 @import './../../styles.scss';
 
 .main-container {
-    @include dFlex();
-    gap: 50px;
+    @include dFlex(space-between, space-between);
+    height: 708px;
+    margin-left: 112px;
+    margin-right: 112px;
+    margin-top: 144px;
+    margin-bottom: 144px;
 
-    .me {
-        @include size(568px, 568px);
-        object-fit: cover;
-        border-radius: 30px;
+    .image-side {
+        margin-bottom: 140px;
+
+        .me {
+            @include size(568px, 568px);
+            object-fit: cover;
+            border-radius: 30px;
+        }
     }
 
-    .text-container {
+    .text-side {
 
+        h5 {
+            margin-bottom: 20px;
+        }
 
         .text-box {
             @include size(568px, 568px);
             @include borderStyling(30px, $primary);
-            background-color: rgba(61,207,182,0.1);
+            background-color: rgba(61, 207, 182, 0.1);
+            padding: 32px;
+            box-sizing: border-box;
+
+            h2 {
+                margin-bottom: 16px;
+            }
 
             p {
                 font-family: Karla;
                 font-size: 18px;
                 color: $fontWhite;
                 line-height: 21.6px;
+                margin-bottom: 32px;
+                text-align: justify;
             }
 
-            bullet-points {
-                display: flex;
-                //hier stimmt etwas nicht..
+            .bullet-container {
+                position: relative;
+                @include dFlex(space-between, flex-start);
+                flex-direction: column;
+                gap: 16px;
 
-                .icon {
-                    @include size(32px, 32px)
-                }
+                .bullet-point {
+                    @include dFlex(space-between, flex-start);
+                    gap: 24px;
 
-                p {
-                    opacity: 0.8;
+                    .icon {
+                        @include size(32px, 32px)
+                    }
+
+                    p {
+                        color: rgba(255, 255, 255, 0.8);
+                        margin: 0;
+                        text-align: unset;
+
+                        &:hover {
+                            color: rgba(255, 255, 255, 1);
+                        }
+                    }
                 }
             }
         }
