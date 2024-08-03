@@ -7,8 +7,8 @@
 }
 
 .navbar {
-    @include size(409px, 28px);
-    @include dFlex(space-between, center);
+    
+    @include dFlex();
 
     a {
         font-family: Fira Code;
@@ -16,12 +16,26 @@
         font-weight: 400;
         text-decoration: none;
         color: $fontWhite;
+        margin-left: 24px;
+    }
 
-        &:hover {
-            color: $primary;
-        }
+    ul li {
+        display: inline-block;
+        position: relative;
+    }
+    
+    ul li:hover:before {
+        content: "";
+        position: absolute;
+        top: 28px;
+        background: $primary;
+        width: 8px;
+        height: 8px;
+        border-radius: 100%;
+        left:calc(50% + 8px);
     }
 }
+
 
 .language-switch {
     @include size(84px, 28px);
