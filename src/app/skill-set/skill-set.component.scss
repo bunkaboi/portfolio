@@ -1,9 +1,9 @@
 @import './../../styles.scss';
 
 .main-container {
-    @include dFlex(space-evenly, space-between);
+    @include dFlex(space-between, space-between);
     height: 708px;
-    margin-left: 0;
+    margin-left: 96px;
     margin-right: 112px;
     margin-top: 144px;
     margin-bottom: 144px;

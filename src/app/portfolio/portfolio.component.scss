@@ -1,0 +1,40 @@
+@import './../../styles.scss';
+
+.main-container {
+    width: 880px;
+    margin-left: 96px;
+   
+
+    p {
+        font-family: Karla;
+        font-size: 18px;
+        color: $fontWhite;
+        width: 456px;
+    }
+
+    .text-separator {
+        color: #3DCFB6;
+    }
+
+    .portfolio-box {
+        @include dFlex(space-between, center);
+        /* padding: 40px, 32px, 40px, 32px; */
+        background-color: grey;
+
+        p {
+            font-family: Fira Code;
+        }
+
+        .proberty-box {
+            background-color: red;
+            display: flex;
+            max-width: 400px;
+
+            p {
+                font-family: Karla;
+                padding:0;
+            }
+        }
+        
+    }
+}

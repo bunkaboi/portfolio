@@ -48,6 +48,7 @@ svg, marquee, p, h2, h5, span {
     padding: 0 24px 0 24px;
     height: 48px;
     overflow: hidden;
+    cursor: pointer;
 
     &:hover {
         border-color: $primary;
