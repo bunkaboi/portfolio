@@ -30,6 +30,61 @@ p {
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+    color: $fontWhite;
+}
+
 svg, marquee, p, h2, h5, span {
     cursor: default;
+}
+
+.btn-style {
+    @include dFlex();
+    @include borderStyling(100px, $fontWhite);
+    font-family: Karla;
+    font-size: 18px;
+    color: $fontWhite;
+    padding: 0 24px 0 24px;
+    height: 48px;
+    overflow: hidden;
+
+    &:hover {
+        border-color: $primary;
+        color: $primary;
+        a{
+            animation: marquee 2s infinite;
+            color: $primary;
+         }
+    }
+
+    
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+        opacity: 1
+    }
+    49% {
+        transform: translateX(-150px);
+        opacity: 1
+    }
+    50% {
+        transform: translateX(-150px);
+        opacity: 0
+    }
+    51% {
+        transform: translateX(150px);
+        opacity: 0
+    }
+    52% {
+        transform: translateX(150px);
+        opacity: 1
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1
+    }
+
 }

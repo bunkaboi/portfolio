@@ -14,6 +14,9 @@
             </div>
             <p>Feel free to contact me. I look forward to expanding on my previous knowledge.
             </p>
+            <div class="btn-style">
+                <a href="mailto: b.augustin@hotmail.com">Let's talk</a>
+            </div>
         </div>
     </div>
 
@@ -59,8 +62,26 @@
             <img src="./../../assets/Property 1=Scrum.svg" alt="">
             <p>Scrum</p>
         </div>
-        <div class="proberty">
+        <div (mouseover)="hover=true" (mouseleave)="hover=false" class="proberty mindset">
             <img src="./../../assets/Property 1=GrowthMindset.svg" alt="">
             <p>Growth mindset</p>
+
+            <div id="infowindow" 
+            [ngStyle]="{'display': hover == true ? 'block' : 'none'}">
+                <div class="bubble">
+                    <p>I have a special interest in learning</p>
+                    <div class="logo-box">
+                        <div class="learning-logo">
+                            <img src="./../../assets/React color.svg" alt="">
+                            <p>React</p>
+                        </div>
+                        <div class="learning-logo">
+                            <img src="./../../assets/Vue Js color.svg" alt="">
+                            <p>Vue Js</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
     </div>
