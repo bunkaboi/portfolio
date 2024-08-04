@@ -1,0 +1,11 @@
+@import './../../styles.scss';
+
+.main-container {
+    width: 800px;
+    height: 500px;
+    background: linear-gradient(210deg, $gradientGreen, $gradientGreen 20%, $background 60%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

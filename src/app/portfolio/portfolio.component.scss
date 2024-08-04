@@ -1,0 +1,58 @@
+@import './../../styles.scss';
+
+.main-container {
+
+    margin: 96px;
+
+    .text-container {
+        font-family: Karla;
+        font-size: 18px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        width: 456px;
+    }
+
+    .project-links-container {
+        display: flex;
+
+        .portfolio-container {
+            width: 880px;
+            border: 1px solid $primary;
+            border-width: 1px 0 0 0;
+
+            .project {
+                @include dFlex(space-between, center);
+                padding: 40px 32px 40px 32px;
+                font-family: Fira Code;
+                font-size: 24px;
+                font-weight: 700;
+                border: 1px solid $primary;
+                border-width: 0 0 1px 0;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: rgba(61, 207, 182, 0.3);
+                }
+
+                .proberties {
+                    @include dFlex();
+                    gap: 8px;
+                    font-family: Karla;
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .project-screen {
+            @include dFlex(flex-start, flex-start);
+            flex-direction: column;
+            margin-left: 96px;
+        }
+    }
+
+
+}
+
+.no-border {
+    border: none;
+}

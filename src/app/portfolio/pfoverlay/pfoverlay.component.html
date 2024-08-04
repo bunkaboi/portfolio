@@ -1,0 +1,22 @@
+<div class="background">
+<div class="main-window">
+    <img class="close" (click)="showOverlay = false; emitOverlay()" style="cursor: pointer" src="./../../../assets/close_small.svg" alt="">
+    <div 
+    [ngStyle]="{'display': showProject1 == true ? 'flex' : 'none'}"
+    (click)="showProject1 = false;">
+        <app-pf-1></app-pf-1>
+    </div>
+    <div 
+    [ngStyle]="{'display': showProject2 == true ? 'flex' : 'none'}"
+    (click)="showProject2 = false;">
+        <app-pf-2></app-pf-2>
+    </div>
+    <div 
+    [ngStyle]="{'display': showProject3 == true ? 'flex' : 'none'}"
+    (click)="showProject3 = false;">
+        <app-pf-3></app-pf-3>
+    </div>
+
+
+</div>
+</div>

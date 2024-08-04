@@ -1,4 +1,74 @@
-<p>portfolio works!</p>
-<app-pf-1></app-pf-1>
-<app-pf-2></app-pf-2>
-<app-pf-3></app-pf-3>
+<div class="main-container">
+    <h5>Portfolio</h5>
+    <h2>Featured Projects</h2>
+    <div class="text-container">
+        <p>Explore a selection of my work here - Interact with projects to see my skills in action.</p>
+    </div>
+
+    <div class="project-links-container">
+        <div class="portfolio-container">
+            <div 
+            (mouseover)="hoverProject1 = true" 
+            (mouseleave)="hoverProject1 = false" 
+            (click)="showProject1 = true; showOverlay = true; showProject2 = false; showProject3 = false" 
+            class="project">
+                <p>Join</p>
+                <div class="proberties">
+                    <p>Angluar</p>
+                    <p class="primary-color">|</p>
+                    <p>TypeScript</p>
+                    <p class="primary-color">|</p>
+                    <p>HTML</p>
+                    <p class="primary-color">|</p>
+                    <p>CSS</p>
+                    <p class="primary-color">|</p>
+                    <p>Firebase</p>
+                </div>
+            </div>
+
+            <div 
+            (mouseover)="hoverProject2 = true" 
+            (mouseleave)="hoverProject2 = false" 
+            (click)="showProject2 = true; showOverlay = true; showProject1 = false; showProject3 = false" 
+            class="project">
+                <p>El Pollo Loco</p>
+                <div class="proberties">
+                    <p>HTML</p>
+                    <p class="primary-color">|</p>
+                    <p>CSS</p>
+                    <p class="primary-color">|</p>
+                    <p>JavaScript</p>
+                </div>
+            </div>
+
+            <div 
+            (mouseover)="hoverProject3 = true" 
+            (mouseleave)="hoverProject3 = false" 
+            (click)="showProject3 = true; showOverlay = true; showProject2 = false; showProject1 = false"
+            class="project no-border">
+                <p>DABubble</p>
+                <div class="proberties">
+                    <p>Angluar</p>
+                    <p class="primary-color">|</p>
+                    <p>Firebase</p>
+                    <p class="primary-color">|</p>
+                    <p>TypeScript</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-screen">
+            <img [ngStyle]="{'display': hoverProject1 == true ? 'flex' : 'none'}" src="./../../assets/preview join.svg"
+                alt="">
+            <img [ngStyle]="{transform: 'translateY(75px)', 'display': hoverProject2 == true ? 'flex' : 'none'}"
+                src="./../../assets/preview loco.svg" alt="">
+            <img [ngStyle]="{transform: 'translateY(150px)', 'display': hoverProject3 == true ? 'flex' : 'none'}"
+                src="./../../assets/preview bubble.svg" alt="">
+        </div>
+    </div>
+</div>
+
+<div 
+[ngStyle]="{'display': showOverlay == true ? 'flex' : 'none'}">
+    <app-pfoverlay (eventOverlay)="checkCloseOverlay($event)" [showProject1]="showProject1" [showProject2]="showProject2" [showProject3]="showProject3"></app-pfoverlay>
+</div>

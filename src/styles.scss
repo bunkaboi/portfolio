@@ -2,12 +2,15 @@
 @import './shared/fonts.scss';
 @import './shared/mixin.scss';
 
+
 body {
     margin: 0;
     box-sizing: border-box;
     background-color: $background;
     color: $fontWhite;
     overflow-x: hidden;
+    width: 100vw;
+    max-width: 100%;
 }
 
 h5 {
@@ -57,8 +60,10 @@ svg, marquee, p, h2, h5, span {
             color: $primary;
          }
     }
+}
 
-    
+.primary-color {
+    color: $primary;
 }
 
 @keyframes marquee {
@@ -88,3 +93,5 @@ svg, marquee, p, h2, h5, span {
     }
 
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
