@@ -29,3 +29,7 @@ h2 {
 p {
     margin: 0;
 }
+
+svg, marquee, p, h2, h5, span {
+    cursor: default;
+}

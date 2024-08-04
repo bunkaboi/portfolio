@@ -1,7 +1,7 @@
 @import './../../styles.scss';
 
 .main-container {
-    @include dFlex(space-between, space-between);
+    @include dFlex(space-evenly, space-between);
     height: 708px;
     margin-left: 112px;
     margin-right: 112px;
@@ -11,17 +11,27 @@
     .image-side {
         margin-bottom: 140px;
 
+        .capa {
+            border-radius: 30px;
+            transform: translate(-42px,36px);
+            position: absolute;
+
+        }
+
         .me {
             @include size(568px, 568px);
             object-fit: cover;
             border-radius: 30px;
+            position: relative;
         }
     }
 
     .text-side {
 
+
         h5 {
             margin-bottom: 20px;
+            margin-top: 80px;
         }
 
         .text-box {

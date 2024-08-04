@@ -1,0 +1,77 @@
+@import './../../styles.scss';
+
+.main-container {
+    @include dFlex(space-evenly, space-between);
+    height: 708px;
+    margin-left: 0;
+    margin-right: 112px;
+    margin-top: 144px;
+    margin-bottom: 144px;
+
+    background-image: url('./../../assets/19.\ Skill\ set\ Background.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    .text-side {
+
+        h5 {
+            margin-bottom: 20px;
+        }
+
+        .text-box {
+            @include size(568px, 568px);
+            @include borderStyling(30px, $primary);
+            background-color: rgba(61, 207, 182, 0.1);
+            padding: 32px;
+            box-sizing: border-box;
+
+            h2 {
+                margin-bottom: 16px;
+            }
+
+            p {
+                font-family: Karla;
+                font-size: 18px;
+                color: $fontWhite;
+                line-height: 21.6px;
+                margin-bottom: 32px;
+                text-align: justify;
+            }
+
+            .another-skill {
+                display: flex;
+
+                p {
+                font-family: Fira Code;
+                font-size: 24px;
+                font-weight: 700;
+                }
+
+                .highlight {
+                    color: $primary;
+                }
+            }
+
+        }
+    }
+
+    .logo-side {
+        @include dFlex(flex-start, flex-start);
+        flex-wrap: wrap;
+        @include size(632px,500px);
+        margin-top: 56px;
+        gap: 72px;
+
+        .proberty {
+            @include dFlex();
+            flex-direction: column;
+            font-family: Fira Code;
+            font-size: 18px;
+            width: 104px;
+            text-align: center;
+            gap: 8px;
+        }
+
+    }
+
+}
