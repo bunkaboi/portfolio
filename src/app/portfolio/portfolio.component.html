@@ -10,7 +10,7 @@
             <div 
             (mouseover)="hoverProject1 = true" 
             (mouseleave)="hoverProject1 = false" 
-            (click)="showProject1 = true; showOverlay = true; showProject2 = false; showProject3 = false" 
+            (click)="showOverlay = true; projectIndex = 0" 
             class="project">
                 <p>Join</p>
                 <div class="proberties">
@@ -29,7 +29,7 @@
             <div 
             (mouseover)="hoverProject2 = true" 
             (mouseleave)="hoverProject2 = false" 
-            (click)="showProject2 = true; showOverlay = true; showProject1 = false; showProject3 = false" 
+            (click)="showOverlay = true; projectIndex = 1" 
             class="project">
                 <p>El Pollo Loco</p>
                 <div class="proberties">
@@ -44,7 +44,7 @@
             <div 
             (mouseover)="hoverProject3 = true" 
             (mouseleave)="hoverProject3 = false" 
-            (click)="showProject3 = true; showOverlay = true; showProject2 = false; showProject1 = false"
+            (click)="showOverlay = true; projectIndex = 2" 
             class="project no-border">
                 <p>DABubble</p>
                 <div class="proberties">
@@ -58,17 +58,17 @@
         </div>
 
         <div class="project-screen">
-            <img [ngStyle]="{'display': hoverProject1 == true ? 'flex' : 'none'}" src="./../../assets/preview join.svg"
+            <img [ngStyle]="{'display': hoverProject1 == true ? 'flex' : 'none'}" src="./../../assets/images/preview join.svg"
                 alt="">
             <img [ngStyle]="{transform: 'translateY(75px)', 'display': hoverProject2 == true ? 'flex' : 'none'}"
-                src="./../../assets/preview loco.svg" alt="">
+                src="./../../assets/images/preview loco.svg" alt="">
             <img [ngStyle]="{transform: 'translateY(150px)', 'display': hoverProject3 == true ? 'flex' : 'none'}"
-                src="./../../assets/preview bubble.svg" alt="">
+                src="./../../assets/images/preview bubble.svg" alt="">
         </div>
     </div>
 </div>
 
 <div 
 [ngStyle]="{'display': showOverlay == true ? 'flex' : 'none'}">
-    <app-pfoverlay (eventOverlay)="checkCloseOverlay($event)" [showProject1]="showProject1" [showProject2]="showProject2" [showProject3]="showProject3"></app-pfoverlay>
+    <app-pfoverlay (eventOverlay)="checkCloseOverlay($event)" [projectIndex]="projectIndex"></app-pfoverlay>
 </div>
