@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +9,7 @@ export class ProjectdataService {
 
   projectlist = [
     {
+      hover: false,
       number: "01",
       name: "Join",
       img_preview: "preview join.svg",
@@ -38,6 +39,7 @@ export class ProjectdataService {
       ]
     },
     {
+      hover: false,
       number: "02",
       name: "El Pollo Loco",
       img_preview: "preview loco.svg",
@@ -59,6 +61,7 @@ export class ProjectdataService {
       ]
     },
     {
+      hover: false,
       number: "03",
       name: "DABubble",
       img_preview: "preview bubble.svg",

@@ -13,12 +13,10 @@
     }
 
     .project-links-container {
-        display: flex;
+        
 
         .portfolio-container {
-            width: 880px;
-            border: 1px solid $primary;
-            border-width: 1px 0 0 0;
+            display: flex;
 
             .project {
                 @include dFlex(space-between, center);
@@ -26,8 +24,9 @@
                 font-family: Fira Code;
                 font-size: 24px;
                 font-weight: 700;
+                width: 880px;
+                max-height: 0px;
                 border: 1px solid $primary;
-                border-width: 0 0 1px 0;
                 cursor: pointer;
 
                 &:hover {
@@ -41,12 +40,11 @@
                     font-size: 18px;
                 }
             }
-        }
 
-        .project-screen {
-            @include dFlex(flex-start, flex-start);
-            flex-direction: column;
-            margin-left: 96px;
+            .preview-screen {
+                position: absolute;
+                left: calc(880px + 96px + 96px);
+            }
         }
     }
 
