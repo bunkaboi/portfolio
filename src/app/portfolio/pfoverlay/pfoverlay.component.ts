@@ -28,7 +28,7 @@ export class PfoverlayComponent {
   
   nextProject() {
     this.projectIndex++;
-    this.projectIndex = this.projectIndex % 3;
+    this.projectIndex = this.projectIndex % this.projectdata.projectlist.length;
     console.log('projekt index ist: ', this.projectIndex);
   }
 
