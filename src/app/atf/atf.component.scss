@@ -61,7 +61,7 @@
             @include dFlex();
 
             svg {
-                animation: hopping 1.5s infinite;
+                animation: up-down-loop 1.5s infinite;
             }
         }
 
@@ -106,15 +106,4 @@
     overflow: hidden;
 }
 
-@keyframes hopping {
-    0% {
-        transform: translateY(-7px);
-    }
-    50% {
-        transform: translateY(10px);
-    }
-    100% {
-        transform: translateY(-7px);
-    }
-}
 

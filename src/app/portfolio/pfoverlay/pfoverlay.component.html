@@ -21,17 +21,31 @@
             <div class="btn-container">
                 <div class="btn-style">
                     <a href="#">GitHub</a>
-                    <img src="./../../../assets/nav/arrow_outward.svg" alt="">
+                    <img class="arrow-right-up"  src="./../../../assets/nav/arrow_outward.svg" alt="">
                 </div>
                 <div class="btn-style">
-                    <a class="animate" href="#">Live Test</a>
-                    <img class="animate" src="./../../../assets/nav/arrow_outward.svg" alt="">
+                    <a href="#">Live Test</a>
+                    <img class="arrow-right-up" src="./../../../assets/nav/arrow_outward.svg" alt="">
                 </div>
             </div>
         </div>
 
         <div class="right-container">
-            <img class="close" (click)="showOverlay = false; emitOverlay()" src="./../../../assets/nav/close_small.svg"
+            <img 
+            class="close" 
+            (mouseover)="hoverClose = true" 
+            (mouseleave)="hoverClose = false" 
+            style="margin: 19px;"
+            [ngStyle]="{'display': hoverClose == false ? 'flex' : 'none'}"
+            src="./../../../assets/nav/close_small.svg"
+                alt="">
+            <img 
+            class="close" 
+            (click)="showOverlay = false; emitOverlay()" 
+            (mouseover)="hoverClose = true" 
+            (mouseleave)="hoverClose = false" 
+            [ngStyle]="{'display': hoverClose == true ? 'flex' : 'none'}"
+            src="./../../../assets/nav/close.svg"
                 alt="">
 
             <img src="./../../../assets/images/{{ projectdata.projectlist[projectIndex].img_frame }}" alt="">

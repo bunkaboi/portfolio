@@ -1,0 +1,53 @@
+@keyframes up-down-loop {
+    0% {
+        transform: translateY(-7px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(-7px);
+    }
+}
+
+@keyframes op-50-100 {
+    
+    from {
+        opacity: 50%;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+
+@keyframes border-primary-white {
+    
+    from {
+        border-color: $primary;
+    }
+    to {
+        border-color: $fontWhite;
+    }
+}
+
+@keyframes scale-bottom-center {
+    from {
+        transform: scale(1);
+        transform-origin: bottom center;
+    }
+    to {
+        transform: scale(1.05);
+        transform-origin: bottom center;
+    }
+}
+
+@keyframes scale-left-center {
+    from {
+        transform: scale(1);
+        transform-origin: left center;
+    }
+    to {
+        transform: scale(1.2);
+        transform-origin: left center;
+    }
+}

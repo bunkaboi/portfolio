@@ -1,7 +1,7 @@
 @import './shared/colors.scss';
 @import './shared/fonts.scss';
 @import './shared/mixin.scss';
-
+@import './shared/animations.scss';
 
 body {
     margin: 0;
@@ -38,7 +38,12 @@ a {
     color: $fontWhite;
 }
 
-svg, marquee, p, h2, h5, span {
+svg,
+marquee,
+p,
+h2,
+h5,
+span {
     cursor: default;
 }
 
@@ -56,11 +61,18 @@ svg, marquee, p, h2, h5, span {
 
     &:hover {
         border-color: $primary;
-        color: $primary;
-        .animate {
-            animation: marquee 2s infinite;
+
+        a {
             color: $primary;
-         }
+        }
+
+        .marquee-effect {
+            animation: marquee-effect 2s infinite;
+        }
+
+        .arrow-right-up {
+            animation: arrow-right-up 0.25s ease-in-out forwards;
+        }
     }
 }
 
@@ -68,27 +80,32 @@ svg, marquee, p, h2, h5, span {
     color: $primary;
 }
 
-@keyframes marquee {
+@keyframes marquee-effect {
     0% {
         transform: translateX(0);
         opacity: 1
     }
+
     49% {
         transform: translateX(-150px);
         opacity: 1
     }
+
     50% {
         transform: translateX(-150px);
         opacity: 0
     }
+
     51% {
         transform: translateX(150px);
         opacity: 0
     }
+
     52% {
         transform: translateX(150px);
         opacity: 1
     }
+
     100% {
         transform: translateX(0);
         opacity: 1
@@ -96,3 +113,12 @@ svg, marquee, p, h2, h5, span {
 
 }
 
+@keyframes arrow-right-up {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(3px, -3px);
+    }
+}

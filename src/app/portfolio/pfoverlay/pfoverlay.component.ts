@@ -16,6 +16,8 @@ export class PfoverlayComponent {
 
   showOverlay = true;
 
+  hoverClose = false;
+
  @Input() projectIndex = 0;
   
 

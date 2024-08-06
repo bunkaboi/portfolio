@@ -78,11 +78,11 @@
         .mindset:hover {
             transform: translateY(5px);
             img {
-                animation: mindset-logo-hover 0.125s ease-in-out forwards;
+                animation: scale-bottom-center 0.125s ease-in-out forwards;
             }
 
             p {
-                animation: mindset-text-hover 0.125s ease-in-out forwards;
+                color: $primary;
             }
 
         }
@@ -137,27 +137,6 @@
         width: 122px;
     }
 
-    @keyframes mindset-logo-hover {
-        from {
-            transform: scale(1);
-            transform-origin: bottom center;
-            
-        }
-
-        to {
-            transform: scale(1.05);
-            transform-origin: bottom center;
-        }
-    }
-
-    @keyframes mindset-text-hover {
-        from {
-            color: $fontWhite;
-        }
-
-        to {
-            color: $primary;
-        }
-    }
+    
 
 }

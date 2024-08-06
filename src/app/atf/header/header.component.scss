@@ -7,7 +7,7 @@
 }
 
 .navbar {
-    
+
     @include dFlex();
 
     a {
@@ -17,13 +17,17 @@
         text-decoration: none;
         color: $fontWhite;
         margin-left: 24px;
+
+        &:hover {
+            color: $primary;
+        }
     }
 
     ul li {
         display: inline-block;
         position: relative;
     }
-    
+
     ul li:hover:before {
         content: "";
         position: absolute;
@@ -32,7 +36,8 @@
         width: 8px;
         height: 8px;
         border-radius: 100%;
-        left:calc(50% + 8px);
+        left: calc(50% + 8px);
+
     }
 }
 
@@ -84,25 +89,5 @@
         font-size: 30px;
         margin-left: 8px;
         line-height: 0.85;
-    }
-}
-
-@keyframes op-50-100 {
-    
-    from {
-        opacity: 50%;
-    }
-    to {
-        opacity: 100%;
-    }
-}
-
-@keyframes border-primary-white {
-    
-    from {
-        border-color: $primary;
-    }
-    to {
-        border-color: $fontWhite;
     }
 }
