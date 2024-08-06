@@ -2,7 +2,7 @@
 
 .background {
     @include size(100vw, 100vh);
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(1px);
     position: fixed;
     top: 50%;
@@ -12,15 +12,94 @@
 }
 
 .main-window {
-    width: 75vw;
-    height: 75vh;
     background: linear-gradient(210deg, $gradientGreen, $gradientGreen 20%, $background 60%);
     @include borderStyling(30px, $primary);
-    
-    .close {
-        position: relative;
-        left: 95%;
-        top: 5%;
+    font-family: Karla;
+    @include dFlex(center, center);
+    gap: 50px;
+    padding: 80px;
+
+    .text-container {
+        width: 480px;
+
+        .project-title {
+            @include dFlex(center, flex-start);
+            flex-direction: column;
+            margin-bottom: 40px;
+
+            .project-number {
+                font-size: 128px;
+                font-weight: 700;
+                color: $primary;
+                margin-bottom: -24px;
+            }
+
+            .project-name {
+                font-family: Fira Code;
+                font-size: 64px;
+                font-weight: 700;
+                color: $fontWhite;
+                letter-spacing: -3%;
+                text-wrap: nowrap;
+            }
+        }
+
+        .project-description {
+
+
+            .headline-description {
+                font-family: Fira Code;
+                font-size: 24px;
+                font-weight: 700;
+                color: $primary;
+                margin-bottom: 20px;
+            }
+
+            .text-description {
+                font-size: 18px;
+                font-weight: 400;
+                color: $fontWhite;
+                margin-bottom: 32px;
+            }
+
+            .tech-logos {
+                @include dFlex(space-between, center);
+                margin-bottom: 40px;
+
+                .single-logo {
+                    @include dFlex(flex-start, center);
+                    gap: 4px;
+                }
+            }
+        }
+
+        .btn-container {
+            @include dFlex(flex-start, center);
+            gap: 32px;
+        }
+    }
+
+    .right-container {
+        @include dFlex(space-between, flex-end);
+        flex-direction: column;
+        gap: 60px;
+
+        .close {
+            cursor: pointer;
+            margin: 15px;
+        }
+
+        .next {
+            display: flex;
+            gap: 16px;
+            cursor: pointer;
+            font-size: 18px;
+            color: $primary;
+            margin-right: 11px;
+
+            p {
+                cursor: pointer;
+            }
+        }
     }
 }
-

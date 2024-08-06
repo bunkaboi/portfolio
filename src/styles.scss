@@ -52,11 +52,12 @@ svg, marquee, p, h2, h5, span {
     height: 48px;
     overflow: hidden;
     cursor: pointer;
+    gap: 8px;
 
     &:hover {
         border-color: $primary;
         color: $primary;
-        a{
+        .animate {
             animation: marquee 2s infinite;
             color: $primary;
          }
@@ -94,5 +95,4 @@ svg, marquee, p, h2, h5, span {
     }
 
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+

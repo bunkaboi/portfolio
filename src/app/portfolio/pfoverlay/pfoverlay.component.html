@@ -1,24 +1,47 @@
-
 <div class="background">
     <div class="main-window">
-        <img class="close" (click)="showOverlay = false; emitOverlay()" style="cursor: pointer"
-            src="./../../../assets/close_small.svg" alt="">
-        <p>{{ projectdata.projectlist[projectIndex].number}}</p>
-        <p>{{ projectdata.projectlist[projectIndex].name}}</p>
-        <p>What is this project about?</p>
-        <p>{{ projectdata.projectlist[projectIndex].about}}</p>
 
-        @for(item of projectdata.projectlist[projectIndex].technologies; track item.tech) {
-            
-            <img src="./../../../assets/logos/{{ item.icon }}" alt="">
-            <p>{{ item.tech }}</p>
-            
-        }
-        
-        
-        
-        <div (click)="nextProject()" style="cursor: pointer; margin-top: 100px;">next project</div>
+        <div class="text-container">
+            <div class="project-title">
+                <p class="project-number">{{ projectdata.projectlist[projectIndex].number}}</p>
+                <p class="project-name">{{ projectdata.projectlist[projectIndex].name}}</p>
+            </div>
+            <div class="project-description">
+                <p class="headline-description">What is this project about?</p>
+                <p class="text-description">{{ projectdata.projectlist[projectIndex].about}}</p>
+                <div class="tech-logos">
+                    @for(item of projectdata.projectlist[projectIndex].technologies; track item.tech) {
+                    <div class="single-logo">
+                        <img src="./../../../assets/logos/{{ item.icon }}" alt="">
+                        <p>{{ item.tech }}</p>
+                    </div>
+                    }
+                </div>
+            </div>
+            <div class="btn-container">
+                <div class="btn-style">
+                    <a href="#">GitHub</a>
+                    <img src="./../../../assets/nav/arrow_outward.svg" alt="">
+                </div>
+                <div class="btn-style">
+                    <a class="animate" href="#">Live Test</a>
+                    <img class="animate" src="./../../../assets/nav/arrow_outward.svg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="right-container">
+            <img class="close" (click)="showOverlay = false; emitOverlay()" src="./../../../assets/nav/close_small.svg"
+                alt="">
+
+            <img src="./../../../assets/images/{{ projectdata.projectlist[projectIndex].img_frame }}" alt="">
+
+            <div (click)="nextProject()" class="next">
+                <p>Next project</p>
+                <img src="./../../../assets/nav/arrow_forward.svg" alt="">
+            </div>
+        </div>
     </div>
 
-    
+
 </div>
