@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
-import { ProjectdataService } from '../../projectdata.service';
+import { ProjectdataService } from '../../services/projectdata.service';
 
 
 @Component({
@@ -27,23 +27,10 @@ export class PfoverlayComponent {
     this.eventOverlay.emit(this.showOverlay);
   }
 
-  
   nextProject() {
     this.projectIndex++;
     this.projectIndex = this.projectIndex % this.projectdata.projectlist.length;
-    console.log('projekt index ist: ', this.projectIndex);
   }
-
-  testlist = [
-    {
-      name: "abc",
-      number: "1,2,3"
-    },
-    {
-      name: "bcd",
-      number: "2,3,4"
-    }
-  ]
 
 }
 

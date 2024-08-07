@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PfoverlayComponent } from './pfoverlay/pfoverlay.component';
-import { ProjectdataService } from '../projectdata.service';
+import { ProjectdataService } from '../services/projectdata.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -13,10 +13,6 @@ import { ProjectdataService } from '../projectdata.service';
 export class PortfolioComponent {
 
   projectdata = inject(ProjectdataService);
-
-  hoverProject0 = false;
-  hoverProject1 = false;
-  hoverProject2 = false;
 
   showOverlay = false;
 

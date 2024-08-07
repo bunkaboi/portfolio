@@ -1,0 +1,65 @@
+@import './../../styles.scss';
+
+.main-container {
+
+    .slider-carousel {
+        @include dFlex();
+        gap: 16px;
+
+        .comment-container {
+            @include dFlex(space-between, flex-start);
+            flex-direction: column;
+            @include borderStyling(32px, $primary);
+            padding: 40px;
+
+            .signature {
+                @include dFlex();
+                width: 100%;
+
+                .line {
+                    background-color: $fontWhite;
+                    height: 1px;
+                    width: 100%;
+                    margin-right: 16px;
+                }
+
+                p {
+                    text-wrap: nowrap;
+                }
+            }
+        }
+    }
+
+    .navigation {
+        @include dFlex();
+        gap: 20px;
+
+        .dot {
+            @include size(8px, 8px);
+            border-radius: 100%;
+            background-color: $fontWhite;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $primary;
+            }
+        }
+
+        img {
+            cursor: pointer;
+        }
+    }
+}
+
+.active {
+    background-color: rgba(61, 207, 182, 0.3);
+    @include size(358px, 360px);
+}
+
+.inactive {
+    background-color: rgba(61, 207, 182, 0.1);
+    @include size(358px, 248px);
+}
+
+
+

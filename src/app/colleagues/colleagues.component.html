@@ -1,1 +1,23 @@
-<p>colleagues works!</p>
+<div class="main-container">
+    <h4>What my colleagues say about me</h4>
+    <div class="slider-carousel">
+        @for(item of commentdata.commentsList; track item; let index = $index){
+        <div class="comment-container" [ngClass]="{'active': index == 1, 'inactive': index !== 1}">
+            <p>{{ item.comment }}</p>
+            <div class="signature">
+                <div class="line"></div>
+                <p>{{ item.name }} - {{ item.jobtitle }}</p>
+            </div>
+        </div>
+        }
+    </div>
+    <div (click)="nextComment()" class="navigation">
+        <div>
+            <img src="./../../assets/nav/arrow_left.svg" alt="">
+        </div>
+        @for(item of commentdata.commentsList; track item; let index = $index){
+        <div class="dot"></div>
+        }
+        <img (click)="previousComment()" src="./../../assets/nav/arrow_right.svg" alt="">
+    </div>
+</div>
