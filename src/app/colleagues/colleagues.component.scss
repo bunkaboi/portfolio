@@ -1,16 +1,25 @@
 @import './../../styles.scss';
 
 .main-container {
+    @include dFlex();
+    flex-direction: column;
 
     .slider-carousel {
         @include dFlex();
-        gap: 16px;
+        gap: 72px;
+        margin-top: 48px;
+        margin-bottom: 48px;
 
         .comment-container {
             @include dFlex(space-between, flex-start);
             flex-direction: column;
             @include borderStyling(32px, $primary);
             padding: 40px;
+
+            img {
+                position: relative;
+                transform: translate(-85px, -346px);
+            }
 
             .signature {
                 @include dFlex();
@@ -28,16 +37,26 @@
                 }
             }
         }
+
+        .active-slide {
+            background-color: rgba(61, 207, 182, 0.3);
+            @include size(358px, 360px);
+        }
+        
+        .inactive-slide {
+            background-color: rgba(61, 207, 182, 0.1);
+            @include size(358px, 248px);
+        }
     }
 
     .navigation {
         @include dFlex();
         gap: 20px;
+    
 
         .dot {
             @include size(8px, 8px);
             border-radius: 100%;
-            background-color: $fontWhite;
             cursor: pointer;
 
             &:hover {
@@ -45,21 +64,35 @@
             }
         }
 
+        .active-dot {
+            background-color: $primary;
+        }
+        .inactive-dot {
+            background-color: $fontWhite;
+        }
+
         img {
             cursor: pointer;
         }
     }
+
+    .animate {
+        animation: slideEffect 1s ease-in-out forwards;
+    }
+
+   @keyframes slideEffect {
+    from {
+        transform: translateX(0);
+        @include size(358px, 360px);
+    }
+    to {
+        transform: translateX(-400px);
+        @include size(358px, 248px);
+    }
+   }
 }
 
-.active {
-    background-color: rgba(61, 207, 182, 0.3);
-    @include size(358px, 360px);
-}
 
-.inactive {
-    background-color: rgba(61, 207, 182, 0.1);
-    @include size(358px, 248px);
-}
 
 
 

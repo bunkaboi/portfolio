@@ -15,15 +15,63 @@ export class ColleaguesComponent {
 
   activeCommentIndex = 1;
 
-nextComment() {
-  this.activeCommentIndex++;
-  /* this.activeCommentIndex = this.activeCommentIndex % this.commentdata.commentsList.length; */
-  console.log('index active comment: ', this.activeCommentIndex);
-}
+  inactiveCommentIndexLeft = 0;
+  inactiveCommentIndexRight = 2;
 
-previousComment() {
-  this.activeCommentIndex--;
-  this.activeCommentIndex = this.activeCommentIndex % this.commentdata.commentsList.length;
-}
+  activeColor = "red";
+  inactiveColor = "grey";
+
+  slideCardAnimation = false;
+  currentSlide = this.commentdata.commentsList[this.activeCommentIndex];
+
+  nextSlide() {
+    if (!this.slideCardAnimation) {
+      this.activeCommentIndex++;
+      this.activeCommentIndex = this.activeCommentIndex % this.commentdata.commentsList.length;
+      this.slideCardAnimation = true;
+    }
+    setTimeout(() => {
+      this.slideCardAnimation = false;
+    }, 1000);
+  }
+
+  nextComment() {
+    this.activeCommentIndex++;
+    this.activeCommentIndex = this.activeCommentIndex % this.commentdata.commentsList.length;
+    this.inactiveSlidesIndexes();
+    this.testlog();
+  }
+
+  inactiveSlidesIndexes() {
+    if (this.activeCommentIndex == 0) {
+      this.inactiveCommentIndexLeft = 2;
+      this.inactiveCommentIndexRight = 1;
+    } else if (this.activeCommentIndex == 1) {
+      this.inactiveCommentIndexLeft = 0;
+      this.inactiveCommentIndexRight = 2;
+    } else if (this.activeCommentIndex == 2) {
+      this.inactiveCommentIndexLeft = 1;
+      this.inactiveCommentIndexRight = 0;
+    }
+  }
+
+  previousComment() {
+    this.activeCommentIndex--;
+    if (this.activeCommentIndex < 0) {
+      this.activeCommentIndex = 2
+    }
+    this.inactiveSlidesIndexes();
+    this.testlog();
+  }
+
+  testlog() {
+    console.log('index active comment: ', this.activeCommentIndex);
+    console.log(' inactive left', this.activeCommentIndex - 1);
+    console.log(' inactive right', this.activeCommentIndex + 1);
+  }
+
+  slideEffect() {
+
+  }
 
 }
