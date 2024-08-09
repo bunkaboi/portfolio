@@ -51,3 +51,46 @@
         transform-origin: left center;
     }
 }
+
+@keyframes marquee-effect {
+    0% {
+        transform: translateX(0);
+        opacity: 1
+    }
+
+    49% {
+        transform: translateX(-150px);
+        opacity: 1
+    }
+
+    50% {
+        transform: translateX(-150px);
+        opacity: 0
+    }
+
+    51% {
+        transform: translateX(150px);
+        opacity: 0
+    }
+
+    52% {
+        transform: translateX(150px);
+        opacity: 1
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1
+    }
+
+}
+
+@keyframes arrow-right-up {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(3px, -3px);
+    }
+}

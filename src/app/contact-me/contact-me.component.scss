@@ -1,9 +1,47 @@
+@import './../../styles.scss';
+
 .main-container {
+    margin-top: 200px;
+    margin-left: 96px;
+    @include dFlex(flex-start, flex-start);
+    gap: 64px;
 
     .text-container {
 
+        width: 568px;
+
+        h5 {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-bottom: 40px;
+        }
+
+        h4 {
+            margin-bottom: 16px;
+        }
+
         p {
             font-family: Karla;
+            font-size: 16px;
         }
+
+        .lets-talk {
+            @include dFlex(flex-start, center);
+
+            a {
+                font-family: Karla;
+                font-size: 16px;
+                font-weight: 700;
+                color: $primary;
+            }
+        }
+    }
+
+    .form-container {
+    background-color: aqua;
+    @include size(616px, auto);
+    height: 700px;
     }
 }

@@ -3,6 +3,7 @@
 .main-container {
 
     margin: 96px;
+    margin-top: 144px;
 
     .text-container {
         font-family: Karla;
@@ -17,6 +18,8 @@
 
         .portfolio-container {
             display: flex;
+            
+            position: relative;
 
             .project {
                 @include dFlex(space-between, center);
@@ -43,7 +46,8 @@
 
             .preview-screen {
                 position: absolute;
-                left: calc(880px + 96px + 96px);
+                left: calc(880px + 96px);
+                
             }
         }
     }

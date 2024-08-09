@@ -22,4 +22,12 @@ export class PortfolioComponent {
     this.showOverlay = check;
   }
 
+  showPreviews():Object {
+    if(this.showOverlay == true) {
+      return 'display: flex; transform: translateY(index * -50px);'
+    } else {
+      return 'display: none;'
+    };
+  }
+
 }

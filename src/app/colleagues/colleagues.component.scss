@@ -3,6 +3,7 @@
 .main-container {
     @include dFlex();
     flex-direction: column;
+    margin-top: 144px;
 
     .slider-carousel {
         @include dFlex();

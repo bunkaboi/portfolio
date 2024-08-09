@@ -21,8 +21,8 @@
                     }
                 </div>
             </div>
-            <img 
-            [ngStyle]="{'display': project.hover == true ? 'flex' : 'none'}"
+            <img             
+            [ngStyle]="{'display': project.hover == true ? 'flex' : 'none', 'top.px': index * -55}"
             class="preview-screen"
             src="./../../assets/images/{{ project.img_preview }}" alt="">
         </div>
