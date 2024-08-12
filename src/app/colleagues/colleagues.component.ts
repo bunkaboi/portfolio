@@ -25,10 +25,11 @@ export class ColleaguesComponent {
   currentSlide = this.commentdata.commentsList[this.activeCommentIndex];
 
   nextSlide() {
-    if (!this.slideCardAnimation) {
+    if (this.slideCardAnimation == false) {
+      this.slideCardAnimation = true;
       this.activeCommentIndex++;
       this.activeCommentIndex = this.activeCommentIndex % this.commentdata.commentsList.length;
-      this.slideCardAnimation = true;
+      
     }
     setTimeout(() => {
       this.slideCardAnimation = false;

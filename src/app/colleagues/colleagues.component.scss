@@ -11,6 +11,20 @@
         margin-top: 48px;
         margin-bottom: 48px;
 
+        
+        
+        .animate-active-to-inactive {
+            animation: slideEffect-ati 1s ease-in-out infinite;
+        }
+
+        .animate-inactive-to-active {
+            animation: slideEffect-ita 1s ease-in-out infinite;
+        }
+    
+        .animate-inactive-to-inactive {
+            animation: slideEffect-iti 1s ease-in-out infinite;
+        }
+
         .comment-container {
             @include dFlex(space-between, flex-start);
             flex-direction: column;
@@ -43,17 +57,18 @@
             background-color: rgba(61, 207, 182, 0.3);
             @include size(358px, 360px);
         }
-        
+
         .inactive-slide {
             background-color: rgba(61, 207, 182, 0.1);
             @include size(358px, 248px);
         }
     }
 
+
     .navigation {
         @include dFlex();
         gap: 20px;
-    
+
 
         .dot {
             @include size(8px, 8px);
@@ -68,6 +83,7 @@
         .active-dot {
             background-color: $primary;
         }
+
         .inactive-dot {
             background-color: $fontWhite;
         }
@@ -77,23 +93,61 @@
         }
     }
 
-    .animate {
-        animation: slideEffect 1s ease-in-out forwards;
+    
+
+    
+
+    @keyframes slideEffect-ati {
+        from {
+            transform: translateX(0);
+            @include size(358px, 360px);
+            background-color: rgba(61, 207, 182, 0.3);
+        }
+
+        to {
+            transform: translateX(-512px);
+            @include size(358px, 248px);
+            background-color: rgba(61, 207, 182, 0.1);
+        }
     }
 
-   @keyframes slideEffect {
-    from {
-        transform: translateX(0);
-        @include size(358px, 360px);
+    @keyframes slideEffect-ita {
+        from {
+            transform: translateX(0px);
+            @include size(358px, 248px);
+            background-color: rgba(61, 207, 182, 0.1);
+        }
+
+        to {
+            transform: translateX(-512px);
+            @include size(358px, 360px);
+            background-color: rgba(61, 207, 182, 0.3);
+        }
     }
-    to {
-        transform: translateX(-400px);
-        @include size(358px, 248px);
+
+    @keyframes slideEffect-iti {
+        0% {
+            transform: translateX(0);
+            @include size(358px, 248px);
+            opacity: 1;
+        }
+
+        1% {
+            transform: translateX(0);
+            @include size(358px, 248px);
+            opacity: 0.5;
+        }
+
+        99% {
+            transform: translateX(1024px);
+            @include size(358px, 248px);
+            opacity: 0.5;
+        }
+
+        100% {
+            transform: translateX(1024px);
+            @include size(358px, 248px);
+            opacity: 1;
+        }
     }
-   }
 }
-
-
-
-
-

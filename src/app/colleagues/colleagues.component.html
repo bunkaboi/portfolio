@@ -13,7 +13,9 @@
             </div>
         
         } -->
-        <div class="comment-container inactive-slide">
+        <div 
+        [ngClass]="{'animate-inactive-to-inactive': slideCardAnimation == false}"
+        class="comment-container inactive-slide">
             <p>{{ commentdata.commentsList[inactiveCommentIndexLeft].comment }}</p>
             <div class="signature">
                 <div class="line"></div>
@@ -22,7 +24,9 @@
             </div>
         </div>
 
-        <div class="comment-container active-slide">
+        <div 
+        [ngClass]="{'animate-active-to-inactive': slideCardAnimation == false}"
+        class="comment-container active-slide">
             <p>{{ commentdata.commentsList[activeCommentIndex].comment }}</p>
             <div class="signature">
                 <div class="line"></div>
@@ -32,7 +36,9 @@
             <img src="./../../assets/quotes.svg" alt="">
         </div>
 
-        <div class="comment-container inactive-slide">
+        <div 
+        [ngClass]="{'animate-inactive-to-active': slideCardAnimation == false}"
+        class="comment-container inactive-slide">
             <p>{{ commentdata.commentsList[inactiveCommentIndexRight].comment }}</p>
             <div class="signature">
                 <div class="line"></div>
