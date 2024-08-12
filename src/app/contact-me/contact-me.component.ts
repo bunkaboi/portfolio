@@ -10,4 +10,15 @@ import { Component } from '@angular/core';
 })
 export class ContactMeComponent {
 
+  checkboxChecked = false;
+  checkboxHovered = false;
+
+setCheckbox() {
+  if(this.checkboxChecked == false) {
+    this.checkboxChecked = true;
+  } else {
+    this.checkboxChecked = false;
+  };
+}
+
 }

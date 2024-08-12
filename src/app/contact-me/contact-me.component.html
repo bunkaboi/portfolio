@@ -14,6 +14,39 @@
     </div>
 
     <div class="form-container">
-        
+        <form action="">
+            <label for="name">What's your name?</label>
+            <input id="name" type="text" placeholder="Your name goes here">
+        </form>
+        <form action="">
+            <label for="email">What's your email?</label>
+            <input id="email" type="text" placeholder="youremail@email.com">
+        </form>
+        <form action="">
+            <label for="help">How can I help you?</label>
+            <input id="help" type="text" placeholder="Hello Björn, I am interested in...">
+        </form>
+
+        <div class="privacy-policy">
+            
+            <div (click)="setCheckbox()"
+            (mouseover)="checkboxHovered = true"
+            (mouseleave)="checkboxHovered = false"
+            [ngClass]="{
+                'cb-unchecked' : checkboxChecked == false && checkboxHovered == false, 
+                'cb-checked' : checkboxChecked == true && checkboxHovered == false,
+                'cb-unchecked-hover' : checkboxChecked == false && checkboxHovered == true, 
+                'cb-checked-hover' : checkboxChecked == true && checkboxHovered == true
+            }"></div>
+                <p>I've read the &nbsp;</p>
+                <p>privacy policy &nbsp;</p>
+                <p>and agree to the processing of my data as outlined.</p>
+            
+        </div>
+
+        <div class="btn-style">
+            Say Hello ;&#41;
+        </div>
+
     </div>
 </div>

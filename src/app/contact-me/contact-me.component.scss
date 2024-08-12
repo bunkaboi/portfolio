@@ -40,8 +40,70 @@
     }
 
     .form-container {
-    background-color: aqua;
-    @include size(616px, auto);
-    height: 700px;
+        @include size(616px, auto);
+        height: 700px;
+        border: 1px solid $primary;
+        border-width: 1px 0 0 0;
+
+        form {
+            border: 1px solid $primary;
+            border-width: 0 0 1px 0;
+            padding: 32px;
+            box-sizing: border-box;
+
+            label {
+                font-family: Fira Code;
+                font-size: 24px;
+                font-weight: 500;
+                color: $primary;
+                display: block;
+                margin-bottom: 16px;
+            }
+
+            input {
+                font-family: Karla;
+                font-size: 18px;
+                font-weight: 400;
+                color: rgba(255, 255, 255, 0.8);
+                border: none;
+                background: none;
+                outline: none;
+                display: block;
+                width: 400px;
+
+                &::placeholder {
+                    color: rgba(255, 255, 255, 0.8);
+                }
+            }
+        }
+
+        .privacy-policy {
+            @include dFlex(flex-start, center);
+
+            div {
+                @include size(24px, 24px);
+                margin-right: 8px;
+            }
+
+            .cb-unchecked {
+                background-image: url('./../../assets/checkbox/checkbox_unchecked.svg');
+            }
+
+            .cb-unchecked-hover {
+                background-image: url('./../../assets/checkbox/checkbox_hover_unchecked.svg');
+            }
+
+            .cb-checked {
+                background-image: url('./../../assets/checkbox/checkbox_checked.svg');
+            }
+
+            .cb-checked-hover {
+                background-image: url('./../../assets/checkbox/checkbox_hover_checked.svg');
+            }
+
+            p {
+                
+            }
+        }
     }
 }
