@@ -28,25 +28,33 @@
         </form>
 
         <div class="privacy-policy">
-            
-            <div (click)="setCheckbox()"
-            (mouseover)="checkboxHovered = true"
-            (mouseleave)="checkboxHovered = false"
-            [ngClass]="{
+            <div class="checkbox">
+                <div (click)="setCheckbox()" (mouseover)="checkboxHovered = true" (mouseleave)="checkboxHovered = false"
+                    [ngClass]="{
                 'cb-unchecked' : checkboxChecked == false && checkboxHovered == false, 
                 'cb-checked' : checkboxChecked == true && checkboxHovered == false,
                 'cb-unchecked-hover' : checkboxChecked == false && checkboxHovered == true, 
                 'cb-checked-hover' : checkboxChecked == true && checkboxHovered == true
-            }"></div>
+            }">
+                </div>
                 <p>I've read the &nbsp;</p>
-                <p>privacy policy &nbsp;</p>
+                <a href="#privacypolicy">privacy policy&nbsp;</a>
                 <p>and agree to the processing of my data as outlined.</p>
-            
-        </div>
+            </div>
+            <p [ngStyle]="{opacity : acceptHello == false ? 1 : 0}" class="warning">Please accept the privacy policy.
+            </p>
 
-        <div class="btn-style">
-            Say Hello ;&#41;
         </div>
-
+        <div 
+        (click)="checkAcception()" 
+        [ngClass]="{'btn-style' : checkboxChecked == true, 'this-btn' : checkboxChecked == false}"
+        class="btn-position">
+        @if(checkboxChecked == true) {
+            <a class="marquee-effect" href="mailto: b.augustin@hotmail.com">Say Hello ;&#41;</a>
+        } @else {
+            <a>Say Hello ;&#41;</a>
+        }
+        </div>
     </div>
+
 </div>

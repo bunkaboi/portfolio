@@ -132,22 +132,16 @@
             opacity: 1;
         }
 
-        25% {
+        33% {
             transform: translateX(-512px);
             @include size(358px, 248px);
             opacity: 0;
         }
 
-        50% {
+        66% {
             transform: translateX(1400px);
             @include size(358px, 248px);
             opacity: 0;
-        }
-
-        75% {
-            transform: translateX(1500px);
-            @include size(358px, 248px);
-            opacity: 1;
         }
 
         100% {

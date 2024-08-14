@@ -1,0 +1,81 @@
+@import './../../styles.scss';
+
+.main-container {
+    margin-top: 200px;
+    margin-left: 96px;
+    margin-right: 96px;
+    margin-bottom: 64px;
+    @include dFlex(space-between, center);
+
+    .left {
+
+        .logo {
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            @include size(100%, 100%);
+            
+            p {
+                margin: 0px;
+                font-size: 23px;
+                
+                &:hover {
+                    color: transparent;
+                
+                -webkit-text-stroke-width: 0.5px;
+                -webkit-text-stroke-color: white;
+                }
+            }
+
+            .name {
+                text-align: start;
+                padding-bottom: 4px;
+                font-size: 30px;
+                margin-left: 8px;
+                line-height: 0.85;
+            }
+
+        }
+
+        p {
+            font-family: Karla;
+            font-size: 16px;
+            color: $fontWhite;
+            margin-top: 8px;
+        }
+    }
+
+    .mid {
+        font-family: Fira Code;
+        font-size: 18px;
+        color: $primary;
+    }
+
+    nav {
+        @include dFlex(space-between, flex-start);
+        flex-direction: column;
+
+        a {
+            font-family: Karla;
+            font-size: 16px;
+            color: $fontWhite;
+            margin-top: 8px;
+
+            &:hover {
+                color: $primary;
+            }
+        }
+
+        ul li {
+            position: relative;
+            list-style-type: none;
+            margin-top: 8px;
+        }
+    
+        ul li:hover {
+            list-style-type: disc;
+            color: $primary;
+        }
+    }
+}

@@ -13,12 +13,23 @@ export class ContactMeComponent {
   checkboxChecked = false;
   checkboxHovered = false;
 
+  acceptHello = true;
+
 setCheckbox() {
   if(this.checkboxChecked == false) {
     this.checkboxChecked = true;
+    this.acceptHello = true;
   } else {
     this.checkboxChecked = false;
   };
+}
+
+checkAcception() {
+  if(this.checkboxChecked) {
+    this.acceptHello = true;
+  } else {
+    this.acceptHello = false;
+  }
 }
 
 }
