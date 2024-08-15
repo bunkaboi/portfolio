@@ -14,7 +14,7 @@
         
         } -->
         <div 
-        [ngClass]="{'animate-inactive-to-inactive': slideCardAnimation == true}"
+        [ngClass]="{'animate-inactive-to-inactive': slideCardAnimation == false}"
         class="comment-container inactive-slide">
             <p>{{ commentdata.commentsList[inactiveCommentIndexLeft].comment }}</p>
             <div class="signature">
@@ -25,7 +25,7 @@
         </div>
 
         <div 
-        [ngClass]="{'animate-active-to-inactive': slideCardAnimation == true}"
+        [ngClass]="{'animate-active-to-inactive': slideCardAnimation == false}"
         class="comment-container active-slide">
             <p>{{ commentdata.commentsList[activeCommentIndex].comment }}</p>
             <div class="signature">
@@ -37,7 +37,7 @@
         </div>
 
         <div 
-        [ngClass]="{'animate-inactive-to-active': slideCardAnimation == true}"
+        [ngClass]="{'animate-inactive-to-active': slideCardAnimation == false}"
         class="comment-container inactive-slide">
             <p>{{ commentdata.commentsList[inactiveCommentIndexRight].comment }}</p>
             <div class="signature">

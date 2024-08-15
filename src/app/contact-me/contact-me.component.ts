@@ -1,14 +1,18 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject} from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { FunctionsService } from '../services/functions.service';
 
 @Component({
   selector: 'app-contact-me',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './contact-me.component.html',
   styleUrl: './contact-me.component.scss'
 })
 export class ContactMeComponent {
+
+  functions = inject(FunctionsService);
 
   checkboxChecked = false;
   checkboxHovered = false;

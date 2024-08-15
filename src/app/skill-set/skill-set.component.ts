@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { FunctionsService } from '../services/functions.service';
 
 @Component({
   selector: 'app-skill-set',
@@ -9,6 +10,8 @@ import { Component } from '@angular/core';
   styleUrl: './skill-set.component.scss'
 })
 export class SkillSetComponent {
+
+  functions = inject(FunctionsService);
 
   hover = false;
 

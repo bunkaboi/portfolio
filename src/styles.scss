@@ -65,16 +65,18 @@ span {
     font-family: Karla;
     font-size: 18px;
     color: $fontWhite;
-    padding: 0 24px 0 24px;
-    height: 48px;
     overflow: hidden;
     cursor: pointer;
     gap: 8px;
 
+    p {
+        cursor: pointer;
+    }
+
     &:hover {
         border-color: $primary;
 
-        a {
+        p {
             color: $primary;
         }
 
@@ -86,6 +88,10 @@ span {
             animation: arrow-right-up 0.25s ease-in-out forwards;
         }
     }
+}
+
+.btn-padding {
+    padding: 12px 24px 12px 24px;
 }
 
 .primary-color {

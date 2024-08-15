@@ -9,24 +9,25 @@
             <p>Need a Frontend Developer?&nbsp;</p>
             <br>
             <br>
-            <a href="mailto: b.augustin@hotmail.com">Let's talk!</a>
+            <p (click)="functions.sendEmail()" class="link">Let's talk!</p>
         </div>
     </div>
 
-    <div class="form-container">
-        <form action="">
+    <form onsubmit="">
+        <div class="form-container">
             <label for="name">What's your name?</label>
-            <input id="name" type="text" placeholder="Your name goes here">
-        </form>
-        <form action="">
+            <input id="name" [(ngModel)]="functions.inputName" name="name" type="text" placeholder="Your name goes here" required minlength="3">
+        </div>
+        <div class="form-container">
             <label for="email">What's your email?</label>
-            <input id="email" type="text" placeholder="youremail@email.com">
-        </form>
-        <form action="">
+            <input id="email" [(ngModel)]="functions.inputEmail" name="email"  type="text" placeholder="youremail@email.com" required 
+            pattern="/^[a-zA-Z0-9.!#$%&*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/">
+        </div>
+        <div class="form-container">
             <label for="help">How can I help you?</label>
-            <input id="help" type="text" placeholder="Hello Björn, I am interested in...">
-        </form>
-
+            <input id="help" [(ngModel)]="functions.inputHelp" name="help"  type="text" placeholder="Hello Björn, I am interested in..." required minlength="3">
+        </div>
+        
         <div class="privacy-policy">
             <div class="checkbox">
                 <div (click)="setCheckbox()" (mouseover)="checkboxHovered = true" (mouseleave)="checkboxHovered = false"
@@ -46,15 +47,15 @@
 
         </div>
         <div 
-        (click)="checkAcception()" 
+        (click)="checkAcception(); functions.sendEmail()"
         [ngClass]="{'btn-style' : checkboxChecked == true, 'this-btn' : checkboxChecked == false}"
         class="btn-position">
         @if(checkboxChecked == true) {
-            <a class="marquee-effect" href="mailto: b.augustin@hotmail.com">Say Hello ;&#41;</a>
+            <p class="marquee-effect btn-padding">Say Hello ;&#41;</p>
         } @else {
-            <a>Say Hello ;&#41;</a>
+            <p class="btn-padding">Say Hello ;&#41;</p>
         }
         </div>
-    </div>
+    </form>
 
 </div>

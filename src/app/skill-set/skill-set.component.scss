@@ -3,17 +3,17 @@
 .main-container {
     @include dFlex(space-between, space-between);
     height: 708px;
-    margin-left: 96px;
+    
     margin-right: 112px;
     margin-top: 144px;
 
     background-image: url('./../../assets/images/19.\ Skill\ set\ Background.png');
     background-repeat: no-repeat;
-    background-size: contain;
-    
+    background-size: contain;   
     
 
     .text-side {
+        margin-left: 96px;
         
         h5 {
             margin-bottom: 20px;

@@ -30,23 +30,28 @@
         .lets-talk {
             @include dFlex(flex-start, center);
 
-            a {
+            .link {
                 font-family: Karla;
                 font-size: 16px;
                 font-weight: 700;
                 color: $primary;
+                cursor: pointer;
+
+                &:hover {
+                    color: $fontWhite;
+                }
             }
         }
     }
 
-    .form-container {
+    form {
         @include size(616px, auto);
         height: auto;
         border: 1px solid $primary;
         border-width: 1px 0 0 0;
         position: relative;
 
-        form {
+        .form-container {
             border: 1px solid $primary;
             border-width: 0 0 1px 0;
             padding: 32px;
@@ -72,10 +77,24 @@
                 display: block;
                 width: 400px;
 
+                &::selection {
+                    background-color: $primary;
+                }
+
                 &::placeholder {
                     color: rgba(255, 255, 255, 0.8);
                 }
+
+                &:-webkit-autofill, :focus {
+                    background: none;
+                    border: none;
+                    -webkit-text-fill-color: rgba(255, 255, 255, 0.8);;
+                    -webkit-box-shadow: none;
+                    transition: background-color 5000s ease-in-out 0s;
+                }
             }
+
+            
         }
 
         .privacy-policy {
@@ -147,11 +166,11 @@
             font-family: Karla;
             font-size: 18px;
             color: $fontWhite;
-            padding: 0 24px 0 24px;
-            height: 48px;
             overflow: hidden;
             cursor: pointer;
             gap: 8px;
         }
+
+        
     }
 }

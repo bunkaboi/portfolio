@@ -1,8 +1,9 @@
-import { Component, ApplicationModule } from '@angular/core';
+import { Component, ApplicationModule, inject } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 import { PrompterComponent } from './prompter/prompter.component';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { CommonModule } from '@angular/common';
+import { FunctionsService } from '../services/functions.service';
 
 
 @Component({
@@ -16,5 +17,6 @@ import { CommonModule } from '@angular/common';
 
 export class AtfComponent {
 
+  functions = inject(FunctionsService);
 
 }

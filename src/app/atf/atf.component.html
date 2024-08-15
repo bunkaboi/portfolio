@@ -6,11 +6,11 @@
         <p class="job">Frontend Developer</p>
         <p class="name">Björn Augustin</p>
         <div class="btn-container">
-            <div class="btn-style">
-                <a class="marquee-effect" href="#">Check my work</a>
+            <div (click)="functions.goToRef('#projects')" class="btn-style btn-padding">
+                <p class="marquee-effect">Check my work</p>
             </div>
-            <div class="btn-style">
-                <a class="marquee-effect" href="mailto: b.augustin@hotmail.com">Contact me</a>
+            <div class="btn-style btn-padding">
+                <p (click)="functions.sendEmail()" class="marquee-effect">Contact me</p>
             </div>
         </div>
     </div>
