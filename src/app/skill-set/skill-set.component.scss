@@ -36,9 +36,7 @@
             p {
                 font-family: Karla;
                 font-size: 18px;
-                color: $fontWhite;
                 line-height: 21.6px;
-                margin-bottom: 32px;
                 text-align: justify;
             }
 
@@ -78,7 +76,7 @@
         }
 
         .mindset:hover {
-            transform: translateY(5px);
+            position: relative;
             img {
                 animation: scale-bottom-center 0.125s ease-in-out forwards;
             }

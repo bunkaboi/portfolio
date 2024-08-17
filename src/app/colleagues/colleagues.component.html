@@ -1,20 +1,10 @@
 <div class="main-container">
     <h4>What my colleagues say about me</h4>
     <div class="slider-carousel">
-        <!-- @for(item of commentdata.commentsList; track item; let index = $index){
         
-            <div [ngClass]="{'active-slide': activeCommentIndex == index, 'inactive-slide': activeCommentIndex !== index, 'animate': slideCardAnimation == true && activeCommentIndex == index}"
-                class="comment-container">
-                <p>{{ item.comment }}</p>
-                <div class="signature">
-                    <div class="line"></div>
-                    <p>{{ item.name }} - {{ item.jobtitle }}</p>
-                </div>
-            </div>
-        
-        } -->
         <div 
-        [ngClass]="{'animate-inactive-to-inactive': slideCardAnimation == false}"
+        [ngClass]="{'animate-inactive-to-inactive': nextCardAnimation == true, 
+        'animate-inactive-to-active-reverse': previousCardAnimation == true}"
         class="comment-container inactive-slide">
             <p>{{ commentdata.commentsList[inactiveCommentIndexLeft].comment }}</p>
             <div class="signature">
@@ -25,7 +15,21 @@
         </div>
 
         <div 
-        [ngClass]="{'animate-active-to-inactive': slideCardAnimation == false}"
+        [ngStyle]="{'display' : nextCardAnimation == true || previousCardAnimation == true ? 'flex' : 'none'}"
+        [ngClass]="{'fadeBox': nextCardAnimation == true, 
+        'fadeBox-reverse': previousCardAnimation == true}"
+        class="comment-container inactive-slide">
+            <p>{{ commentdata.commentsList[inactiveCommentIndexLeft].comment }}</p>
+            <div class="signature">
+                <div class="line"></div>
+                <p>{{ commentdata.commentsList[inactiveCommentIndexLeft].name }} - {{
+                    commentdata.commentsList[inactiveCommentIndexLeft].jobtitle }}</p>
+            </div>
+        </div>
+
+        <div 
+        [ngClass]="{'animate-active-to-inactive': nextCardAnimation == true, 
+        'animate-active-to-inactive-reverse': previousCardAnimation == true}"
         class="comment-container active-slide">
             <p>{{ commentdata.commentsList[activeCommentIndex].comment }}</p>
             <div class="signature">
@@ -33,11 +37,12 @@
                 <p>{{ commentdata.commentsList[activeCommentIndex].name }} - {{
                     commentdata.commentsList[activeCommentIndex].jobtitle }}</p>
             </div>
-            <img src="./../../assets/quotes.svg" alt="">
+            
         </div>
 
         <div 
-        [ngClass]="{'animate-inactive-to-active': slideCardAnimation == false}"
+        [ngClass]="{'animate-inactive-to-active': nextCardAnimation == true, 
+        'animate-inactive-to-inactive-reverse': previousCardAnimation == true}"
         class="comment-container inactive-slide">
             <p>{{ commentdata.commentsList[inactiveCommentIndexRight].comment }}</p>
             <div class="signature">
@@ -46,6 +51,7 @@
                     commentdata.commentsList[inactiveCommentIndexRight].jobtitle }}</p>
             </div>
         </div>
+        <img src="./../../assets/quotes.svg" alt="">
     </div>
 
 <div class="navigation">
@@ -53,7 +59,7 @@
         <img (click)="previousComment()" src="./../../assets/nav/arrow_left.svg" alt="">
     </div>
     @for(item of commentdata.commentsList; track item; let index = $index){
-    <div (click)="activeCommentIndex = index; inactiveSlidesIndexes()"
+    <div (click)="activeCommentIndex = index"
         [ngClass]="{'active-dot': activeCommentIndex == index, 'inactive-dot': activeCommentIndex !== index}"
         class="dot">
     </div>

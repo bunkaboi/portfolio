@@ -21,25 +21,51 @@ export class ColleaguesComponent {
   activeColor = "red";
   inactiveColor = "grey";
 
-  slideCardAnimation = false;
+  nextCardAnimation = false;
+  previousCardAnimation = false;
   currentSlide = this.commentdata.commentsList[this.activeCommentIndex];
 
   nextSlide() {
-    if (this.slideCardAnimation == false) {
-      this.slideCardAnimation = true;
-      this.activeCommentIndex++;
-      this.activeCommentIndex = this.activeCommentIndex % this.commentdata.commentsList.length;
-      
+    if (this.nextCardAnimation == false) {
+      this.nextCardAnimation = true;
     }
     setTimeout(() => {
-      this.slideCardAnimation = false;
+      this.nextCardAnimation = false;
+    }, 1000);
+  }
+
+  previousSlide() {
+    if (this.previousCardAnimation == false) {
+      this.previousCardAnimation = true;
+    }
+    setTimeout(() => {
+      this.previousCardAnimation = false;
     }, 1000);
   }
 
   nextComment() {
-    this.activeCommentIndex++;
+    this.nextSlide();
+    setTimeout(() => {
+      this.activeCommentIndex++;
     this.activeCommentIndex = this.activeCommentIndex % this.commentdata.commentsList.length;
     this.inactiveSlidesIndexes();
+    }, 1000)
+    
+    
+    this.testlog();
+  }
+
+
+  previousComment() {
+    this.previousSlide();
+    setTimeout(() => {
+      this.activeCommentIndex--;
+    if (this.activeCommentIndex < 0) {
+      this.activeCommentIndex = 2
+    }
+    this.inactiveSlidesIndexes();
+    }, 1000) 
+    
     this.testlog();
   }
 
@@ -56,23 +82,12 @@ export class ColleaguesComponent {
     }
   }
 
-  previousComment() {
-    this.activeCommentIndex--;
-    if (this.activeCommentIndex < 0) {
-      this.activeCommentIndex = 2
-    }
-    this.inactiveSlidesIndexes();
-    this.testlog();
-  }
-
   testlog() {
     console.log('index active comment: ', this.activeCommentIndex);
     console.log(' inactive left', this.activeCommentIndex - 1);
     console.log(' inactive right', this.activeCommentIndex + 1);
-  }
-
-  slideEffect() {
-
+    console.log('nextCardAnimation = ', this.nextCardAnimation);
+    console.log('previousCardAnimation = ', this.previousCardAnimation);
   }
 
 }
