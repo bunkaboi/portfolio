@@ -23,4 +23,8 @@ export class FunctionsService {
   goToRef(ref:string) {
     window.location.href = ref;
   }
+
+  goToUrl(url:string) {
+    window.open(url);
+  }
 }

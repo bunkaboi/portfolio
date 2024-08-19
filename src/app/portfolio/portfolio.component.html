@@ -1,12 +1,11 @@
 <div id="projects" class="main-container">
-    <h5>Portfolio</h5>
-    <h2>Featured Projects</h2>
+    <h5>{{ language.portfolio[language.languageIndex].Portfolio }}</h5>
+    <h2>{{ language.portfolio[language.languageIndex].Projects }}</h2>
     <div class="text-container">
-        <p>Explore a selection of my work here - Interact with projects to see my skills in action.</p>
+        <p>{{ language.portfolio[language.languageIndex].text }}</p>
     </div>
-
+    
     <div class="project-links-container">
-
         @for(project of projectdata.projectlist; track project.number; let index = $index; let firstproject = $first){
         <div class="portfolio-container">
             <div (mouseover)="project.hover = true" (mouseleave)="project.hover = false" (click)="showOverlay = true; 

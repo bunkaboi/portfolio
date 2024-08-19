@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-header',
@@ -10,18 +11,8 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
-  langEng = true;
-  langDeu = false;
-  randomValue = 12;
+  constructor(public language: LanguageService) { }
 
-langSwitch() {
-  if(this.langEng == true) {
-    this.langEng = false;
-    this.langDeu = true;
-  } else if (this.langEng == false) {
-    this.langEng = true;
-    this.langDeu = false;
-  }
-}
+  randomValue = 12;
 
 }

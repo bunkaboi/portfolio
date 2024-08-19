@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-prompter',
@@ -8,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './prompter.component.scss'
 })
 export class PrompterComponent {
+
+  constructor(public language: LanguageService) { }
 
 }

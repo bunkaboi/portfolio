@@ -7,8 +7,13 @@
                 <p class="project-name">{{ projectdata.projectlist[projectIndex].name}}</p>
             </div>
             <div class="project-description">
-                <p class="headline-description">What is this project about?</p>
-                <p class="text-description">{{ projectdata.projectlist[projectIndex].about}}</p>
+                <p class="headline-description">{{ language.portfolio[language.languageIndex].projectHeadline }}</p>
+                @if(language.languageIndex == 0) {
+                    <p class="text-description">{{ projectdata.projectlist[projectIndex].about_de }}</p>
+                } @else if (language.languageIndex == 1) {
+                    <p class="text-description">{{ projectdata.projectlist[projectIndex].about_en }}</p>
+                }
+                
                 <div class="tech-logos">
                     @for(item of projectdata.projectlist[projectIndex].technologies; track item.tech) {
                     <div class="single-logo">
@@ -20,12 +25,17 @@
             </div>
             <div class="btn-container">
                 <div class="btn-style">
-                    <a href="#">GitHub</a>
-                    <img class="arrow-right-up"  src="./../../../assets/nav/arrow_outward.svg" alt="">
+                    <div (click)="functions.goToUrl('https://www.github.com/BjoernAugustin/')" class="btn-style btn-padding">
+                        <p class="marquee-effect">Github</p>
+                        <img class="arrow-right-up"  src="./../../../assets/nav/arrow_outward.svg" alt="">
+                    </div>
+                    
                 </div>
                 <div class="btn-style">
-                    <a href="#">Live Test</a>
-                    <img class="arrow-right-up" src="./../../../assets/nav/arrow_outward.svg" alt="">
+                    <div (click)="functions.goToUrl(projectdata.projectlist[projectIndex].url)" class="btn-style btn-padding">
+                        <p class="marquee-effect">Live Test</p>
+                        <img class="arrow-right-up" src="./../../../assets/nav/arrow_outward.svg" alt="">
+                    </div>
                 </div>
             </div>
         </div>
@@ -51,7 +61,7 @@
             <img src="./../../../assets/images/{{ projectdata.projectlist[projectIndex].img_frame }}" alt="">
 
             <div (click)="nextProject()" class="next">
-                <p>Next project</p>
+                <p>{{ language.portfolio[language.languageIndex].projectNext }}</p>
                 <img src="./../../../assets/nav/arrow_forward.svg" alt="">
             </div>
         </div>

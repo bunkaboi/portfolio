@@ -88,14 +88,77 @@
         }
 
         .socialmedia {
-            @include size(32px, 76px);
+            @include size(auto, 76px);
             @include dFlex(space-between, center);
             flex-direction: column;
+
+            .git-logo {
+                position: relative;
+                @include size(32px, 32px);
+                background-image: url('./../../assets/logos/Property\ 1=GitHub.svg');
+                cursor: pointer;
+
+                &:hover {
+                    background-image: url('./../../assets/logos/Github_hover.svg');
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        right: - 15px;
+                        width: 8px;
+                        height: 8px;
+                        background-color: $primary;
+                        border-radius: 100%;
+                    }
+                }
+            }
+
+            .linkedIn-logo {
+                position: relative;
+                @include size(32px, 32px);
+                background-image: url('./../../assets/logos/Property 1=Linkedin.svg');
+                cursor: pointer;
+
+                &:hover {
+                    background-image: url('./../../assets/logos/Linkedin_hover.svg');
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        right: - 15px;
+                        width: 8px;
+                        height: 8px;
+                        background-color: $primary;
+                        border-radius: 100%;
+                    }
+                }
+            }
+
+            /* .sm-icon {
+                position: relative;
+
+                img {
+                    @include size(100%, auto);
+                    cursor: pointer;
+                }
+
+                .navdot {
+                    @include size(8px, 8px);
+                    background-color: $primary;
+                    border-radius: 100%;
+                    position: absolute;
+                    top: 50%;
+                    right: -12px;
+                    transform: translateY(-50%);
+                }
+            } */
         }
 
-        img {
-            @include size(100%, auto);
-        }
+
     }
 }
 
@@ -105,5 +168,3 @@
     rotate: -3deg;
     overflow: hidden;
 }
-
-

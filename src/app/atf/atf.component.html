@@ -3,14 +3,14 @@
         <app-header></app-header>
     </div>
     <div class="title">
-        <p class="job">Frontend Developer</p>
+        <p class="job">{{ language.atf[language.languageIndex].job }}</p>
         <p class="name">Björn Augustin</p>
         <div class="btn-container">
             <div (click)="functions.goToRef('#projects')" class="btn-style btn-padding">
-                <p class="marquee-effect">Check my work</p>
+                <p class="marquee-effect">{{ language.atf[language.languageIndex].checkBTN }}</p>
             </div>
             <div (click)="functions.sendEmail()" class="btn-style btn-padding">
-                <p class="marquee-effect">Contact me</p>
+                <p class="marquee-effect">{{ language.atf[language.languageIndex].contactBTN }}</p>
             </div>
         </div>
     </div>
@@ -34,8 +34,9 @@
                 <a href="mailto: b.augustin@hotmail.com">b.augustin&#64;hotmail.com</a>
             </div>
             <div class="socialmedia">
-                <img src="./../../assets/logos/Property 1=GitHub.svg" alt="">
-                <img src="./../../assets/logos/Property 1=Linkedin.svg" alt="">
+                <div (click)="functions.goToUrl('https://www.github.com/BjoernAugustin/')" class="git-logo"></div>
+                <div (click)="functions.goToUrl('https://www.linkedin.com/in/bj%C3%B6rn-augustin-leuchtturm1917?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app')"
+                    class="linkedIn-logo"></div>
             </div>
             <svg width="2" height="186" xmlns="http://www.w3.org/2000/svg">
                 <line x1="1" y1="0" x2="1" y2="186" stroke="#FFFFFF" stroke-width="1" />

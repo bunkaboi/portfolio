@@ -1,21 +1,19 @@
 <div id="skills" class="main-container">
 
     <div class="text-side">
-        <h5>Technologies</h5>
+        <h5>{{ language.skillSet[language.languageIndex].Technologies }}</h5>
         <div class="text-box">
-            <h2>Skill Set</h2>
-            <p>My journey has involved working on diverse projects, employing a range of frontend technologies and
-                concepts. I am open to embracing new technologies and methodologies to Continously enhance my skills and
-                stay ahead in the ever-evolving landscape of web development.
+            <h2>{{ language.skillSet[language.languageIndex].SkillSet }}</h2>
+            <p>{{ language.skillSet[language.languageIndex].text1 }}
             </p>
             <div class="another-skill">
-                <p>You need&nbsp;</p>
-                <p class="highlight">another skill?</p>
+                <p>{{ language.skillSet[language.languageIndex].sub1 }}&nbsp;</p>
+                <p class="highlight">{{ language.skillSet[language.languageIndex].sub2 }}</p>
             </div>
-            <p>Feel free to contact me. I look forward to expanding on my previous knowledge.
+            <p>{{ language.skillSet[language.languageIndex].text2 }}
             </p>
             <div (click)="functions.sendEmail()" class="btn-style btn-padding">
-                <p class="marquee-effect">Let's talk</p>
+                <p class="marquee-effect">{{ language.skillSet[language.languageIndex].letsTalkBTN }}</p>
             </div>
         </div>
     </div>
@@ -64,12 +62,12 @@
         </div>
         <div (mouseover)="hover=true" (mouseleave)="hover=false" class="proberty mindset">
             <img src="./../../assets/logos/Property 1=GrowthMindset.svg" alt="">
-            <p>Growth mindset</p>
+            <p>{{ language.skillSet[language.languageIndex].mindset }}</p>
 
             <div id="infowindow" 
             [ngStyle]="{'display': hover == true ? 'block' : 'none'}">
                 <div class="bubble">
-                    <p>I have a special interest in learning</p>
+                    <p>{{ language.skillSet[language.languageIndex].interest }}</p>
                     <div class="logo-box">
                         <div class="learning-logo">
                             <img src="./../../assets/logos/React color.svg" alt="">

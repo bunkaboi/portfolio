@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommentsService } from '../services/comments.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { CommentsService } from '../services/comments.service';
 })
 export class ColleaguesComponent {
 
-  commentdata = inject(CommentsService);
+  constructor(public commentdata: CommentsService) { }
 
   activeCommentIndex = 1;
 
