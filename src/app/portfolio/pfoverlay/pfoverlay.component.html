@@ -51,7 +51,7 @@
                 alt="">
             <img 
             class="close" 
-            (click)="showOverlay = false; emitOverlay()" 
+            (click)="isOpen = !isOpen; emitOverlay()" 
             (mouseover)="hoverClose = true" 
             (mouseleave)="hoverClose = false" 
             [ngStyle]="{'display': hoverClose == true ? 'flex' : 'none'}"

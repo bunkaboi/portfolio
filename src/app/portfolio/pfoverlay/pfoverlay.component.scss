@@ -1,7 +1,7 @@
 @import './../../../styles.scss';
 
 .background {
-    @include size(100vw, 100vh);
+    /* @include size(100vw, 100vh); */
     background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(1px);
     position: fixed;

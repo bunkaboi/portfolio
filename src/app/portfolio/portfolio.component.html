@@ -8,8 +8,7 @@
     <div class="project-links-container">
         @for(project of projectdata.projectlist; track project.number; let index = $index; let firstproject = $first){
         <div class="portfolio-container">
-            <div (mouseover)="project.hover = true" (mouseleave)="project.hover = false" (click)="showOverlay = true; 
-                projectIndex = index" class="project"
+            <div (mouseover)="project.hover = true" (mouseleave)="project.hover = false" (click)="isOpen = !isOpen" cdkOverlayOrigin #trigger="cdkOverlayOrigin" class="project"
                 [ngStyle]="{'border-width': firstproject == true ? '1px 0 1px 0' : '0 0 1px 0'}">
                 <p>{{ project.name }}</p>
                 <div class="proberties">
@@ -29,6 +28,17 @@
 
     </div>
 
-    <div [ngStyle]="{'display': showOverlay == true ? 'flex' : 'none'}">
+    <!-- <div [ngStyle]="{'display': showOverlay == true ? 'flex' : 'none'}">
         <app-pfoverlay (eventOverlay)="checkCloseOverlay($event)" [projectIndex]="projectIndex"></app-pfoverlay>
-    </div>
+    </div> -->
+    <button (click)="isOpen = !isOpen" type="button" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+        {{isOpen ? "Close" : "Open"}}
+      </button>
+    <ng-template cdkPortal
+    cdkConnectedOverlay
+    [cdkConnectedOverlayOrigin]="trigger"
+    [cdkConnectedOverlayOpen]="isOpen">
+        <app-pfoverlay></app-pfoverlay>
+    </ng-template>
+
+    <!-- (click)="showOverlay = true -->

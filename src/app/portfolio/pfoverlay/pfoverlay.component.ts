@@ -3,12 +3,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ProjectdataService } from '../../services/projectdata.service';
 import { LanguageService } from '../../services/language.service';
 import { FunctionsService } from '../../services/functions.service';
-
+import { OverlayModule, OverlayRef } from '@angular/cdk/overlay';
 
 @Component({
   selector: 'app-pfoverlay',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, OverlayModule],
   templateUrl: './pfoverlay.component.html',
   styleUrl: './pfoverlay.component.scss'
 })
@@ -18,18 +18,17 @@ export class PfoverlayComponent {
   
   }
 
-  showOverlay = true;
-
   hoverClose = false;
 
   @Input() projectIndex = 0;
 
+  isOpen = true;
+
   @Output() eventOverlay = new EventEmitter<boolean>();
 
-
-
   emitOverlay() {
-    this.eventOverlay.emit(this.showOverlay);
+    this.eventOverlay.emit(this.isOpen);
+    console.log('open?= ', this.isOpen);
   }
 
   nextProject() {
