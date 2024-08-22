@@ -4,7 +4,8 @@ import { PfoverlayComponent } from './pfoverlay/pfoverlay.component';
 import { ProjectdataService } from '../services/projectdata.service';
 import { LanguageService } from '../services/language.service';
 import { CdkPortal, PortalModule } from '@angular/cdk/portal';
-import { Overlay, OverlayModule, OverlayRef } from '@angular/cdk/overlay';
+import { Overlay, OverlayConfig, OverlayModule, OverlayRef } from '@angular/cdk/overlay';
+import { FunctionsService } from '../services/functions.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -14,36 +15,27 @@ import { Overlay, OverlayModule, OverlayRef } from '@angular/cdk/overlay';
   styleUrl: './portfolio.component.scss'
 })
 export class PortfolioComponent {
+
+  constructor(public projectdata: ProjectdataService, public language: LanguageService, private overlay: Overlay, public functions: FunctionsService) {
+  }
+
   @ViewChild(CdkPortal) portal!: CdkPortal;
+  
+    openModal() {
+    const config = new OverlayConfig({
+      positionStrategy: this.overlay.position().global().centerHorizontally().centerVertically(),
+      hasBackdrop: true
+    })
 
-  constructor(public projectdata : ProjectdataService, public language : LanguageService, private overlay: Overlay) {
+    this.functions.overlayRef = this.overlay.create(config);
+    this.functions.overlayRef.attach(this.portal);
+    this.functions.overlayRef.backdropClick().subscribe(() => this.functions.overlayRef.detach());
   }
 
-  isOpen = false;
-
-  overlayRef = this.overlay;
-
-  openOverlay() {
-    let overlayRef = this.overlay.create();
-    overlayRef.attach(this.portal);
-  }
-
-  //schau dir das Thema subscribe noch mal an. vielleicht findest du da eine Idee, wie die subscribe anwendest und somit auch detach oder disposed
-
-  showOverlay = false;
+  
 
   projectIndex = 0;
 
-  checkCloseOverlay(check: boolean) {
-    this.showOverlay = check;
-  }
-
-  showPreviews():Object {
-    if(this.showOverlay == true) {
-      return 'display: flex; transform: translateY(index * -50px);'
-    } else {
-      return 'display: none;'
-    };
-  }
+  closeOverlay = false;
 
 }

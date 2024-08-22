@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ProjectdataService } from '../../services/projectdata.service';
 import { LanguageService } from '../../services/language.service';
 import { FunctionsService } from '../../services/functions.service';
-import { OverlayModule, OverlayRef } from '@angular/cdk/overlay';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 @Component({
   selector: 'app-pfoverlay',
@@ -14,26 +14,19 @@ import { OverlayModule, OverlayRef } from '@angular/cdk/overlay';
 })
 export class PfoverlayComponent {
 
-  constructor(public projectdata: ProjectdataService, public language: LanguageService, public functions: FunctionsService) {
-  
-  }
+  constructor(public projectdata: ProjectdataService, public language: LanguageService, public functions: FunctionsService) { }
 
   hoverClose = false;
 
   @Input() projectIndex = 0;
 
-  isOpen = true;
-
-  @Output() eventOverlay = new EventEmitter<boolean>();
-
-  emitOverlay() {
-    this.eventOverlay.emit(this.isOpen);
-    console.log('open?= ', this.isOpen);
-  }
-
   nextProject() {
     this.projectIndex++;
     this.projectIndex = this.projectIndex % this.projectdata.projectlist.length;
+  }
+
+  close() {
+    this.functions.overlayRef.detach();
   }
 
 }

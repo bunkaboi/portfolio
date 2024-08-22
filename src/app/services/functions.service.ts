@@ -7,6 +7,8 @@ export class FunctionsService {
 
   constructor() { }
 
+  overlayRef: any = "";
+
   inputName:string ="";
   inputEmail:string ="";
   inputHelp:string ="";

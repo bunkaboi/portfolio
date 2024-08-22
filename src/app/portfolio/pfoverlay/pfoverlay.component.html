@@ -1,4 +1,4 @@
-<div class="background">
+
     <div class="main-window">
 
         <div class="text-container">
@@ -51,7 +51,7 @@
                 alt="">
             <img 
             class="close" 
-            (click)="isOpen = !isOpen; emitOverlay()" 
+            (click)="close()" 
             (mouseover)="hoverClose = true" 
             (mouseleave)="hoverClose = false" 
             [ngStyle]="{'display': hoverClose == true ? 'flex' : 'none'}"
@@ -67,5 +67,3 @@
         </div>
     </div>
 
-
-</div>
