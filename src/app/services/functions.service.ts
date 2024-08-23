@@ -17,8 +17,8 @@ export class FunctionsService {
   
   myEmail = 'b.augustin@hotmail.com';
 
-  sendEmail() {
-    let mailtoLink = `mailto:${this.myEmail}?subject=${this.mailSubject}&body=${this.inputHelp}`;
+  sendEmail(myEmail: string, subject: string, body: string) {
+    let mailtoLink = `mailto:${myEmail}?subject=${subject}&body=${body}`;
     window.location.href = mailtoLink;
   }
 

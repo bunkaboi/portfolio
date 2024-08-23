@@ -6,12 +6,12 @@
         <p class="job">{{ language.atf[language.languageIndex].job }}</p>
         <p class="name">Björn Augustin</p>
         <div class="btn-container">
-            <div (click)="functions.goToRef('#projects')" class="btn-style btn-padding">
+            <button (click)="functions.goToRef('#projects')" class="btn-style btn-padding">
                 <p class="marquee-effect">{{ language.atf[language.languageIndex].checkBTN }}</p>
-            </div>
-            <div (click)="functions.sendEmail()" class="btn-style btn-padding">
+            </button>
+            <button (click)="functions.sendEmail(functions.myEmail, functions.mailSubject, '')" class="btn-style btn-padding">
                 <p class="marquee-effect">{{ language.atf[language.languageIndex].contactBTN }}</p>
-            </div>
+            </button>
         </div>
     </div>
     <div class="bottom-section">

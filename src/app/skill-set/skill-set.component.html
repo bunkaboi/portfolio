@@ -12,9 +12,9 @@
             </div>
             <p>{{ language.skillSet[language.languageIndex].text2 }}
             </p>
-            <div (click)="functions.sendEmail()" class="btn-style btn-padding">
+            <button (click)="functions.sendEmail(functions.myEmail, functions.mailSubject, '')" class="btn-style btn-padding">
                 <p class="marquee-effect">{{ language.skillSet[language.languageIndex].letsTalkBTN }}</p>
-            </div>
+            </button>
         </div>
     </div>
 

@@ -60,6 +60,10 @@ span {
     cursor: default;
 }
 
+button {
+    background-color: transparent;
+}
+
 .btn-style {
     @include dFlex();
     @include borderStyling(100px, $fontWhite);

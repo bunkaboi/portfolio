@@ -9,25 +9,31 @@
             <p>Need a Frontend Developer?&nbsp;</p>
             <br>
             <br>
-            <p (click)="functions.sendEmail()" class="link">Let's talk!</p>
+            <p (click)="functions.sendEmail(functions.myEmail, functions.mailSubject, '')" class="link">Let's talk!</p>
         </div>
     </div>
 
-    <form onsubmit="">
+    <form #messageForm="ngForm" (ngSubmit)="submitForm(messageForm); messageForm.resetForm()">
+
         <div class="form-container">
             <label for="name">What's your name?</label>
-            <input id="name" [(ngModel)]="functions.inputName" name="name" type="text" placeholder="Your name goes here" required minlength="3">
+            <input id="name" name="name" type="text" placeholder="Your name goes here" [(ngModel)]="message.name"
+                #name="ngModel" required minlength="3">
+            <p *ngIf="name.errors?.['minlength']" class="warning">Oops! it seems your name is missing</p>
         </div>
         <div class="form-container">
             <label for="email">What's your email?</label>
-            <input id="email" [(ngModel)]="functions.inputEmail" name="email"  type="text" placeholder="youremail@email.com" required 
-            pattern="/^[a-zA-Z0-9.!#$%&*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/">
+            <input id="email" name="email" type="text" placeholder="youremail@email.com" [(ngModel)]="message.email"
+                #email="ngModel" required pattern="_%±]+@[a-zA-Z0-9. -]+. [a-zA-Z]{2,}$">
+            <p *ngIf="email.errors?.['pattern']" class="warning">Hoppla! your email is required</p>
         </div>
         <div class="form-container">
             <label for="help">How can I help you?</label>
-            <input id="help" [(ngModel)]="functions.inputHelp" name="help"  type="text" placeholder="Hello Björn, I am interested in..." required minlength="3">
+            <input id="help" name="help" type="text" placeholder="Hello Björn, I am interested in..."
+                [(ngModel)]="message.message" #msg="ngModel" required minlength="3">
+            <p *ngIf="msg.errors?.['minlength']" class="warning">What do you need to develop?</p>
         </div>
-        
+
         <div class="privacy-policy">
             <div class="checkbox">
                 <div (click)="setCheckbox()" (mouseover)="checkboxHovered = true" (mouseleave)="checkboxHovered = false"
@@ -42,20 +48,19 @@
                 <a href="#privacypolicy">privacy policy&nbsp;</a>
                 <p>and agree to the processing of my data as outlined.</p>
             </div>
-            <p [ngStyle]="{opacity : acceptHello == false ? 1 : 0}" class="warning">Please accept the privacy policy.
+            <p [ngStyle]="{opacity : validPrivacyAcception == false ? 1 : 0}" class="warning">Please accept the privacy
+                policy.
             </p>
 
         </div>
-        <div 
-        (click)="checkAcception(); functions.sendEmail()"
-        [ngClass]="{'btn-style' : checkboxChecked == true, 'this-btn' : checkboxChecked == false}"
-        class="btn-position">
-        @if(checkboxChecked == true) {
+        <button type="submit" [ngClass]="{'btn-style' : checkboxChecked == true, 'this-btn' : checkboxChecked == false}"
+            class="btn-position">
+            @if(checkboxChecked == true) {
             <p class="marquee-effect btn-padding">Say Hello ;&#41;</p>
-        } @else {
+            } @else {
             <p class="btn-padding">Say Hello ;&#41;</p>
-        }
-        </div>
+            }
+        </button>
     </form>
 
 </div>

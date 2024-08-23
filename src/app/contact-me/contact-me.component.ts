@@ -1,7 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { FunctionsService } from '../services/functions.service';
+
+interface Message {
+  name: string;
+  email: string;
+  message: string;
+}
 
 @Component({
   selector: 'app-contact-me',
@@ -10,19 +16,33 @@ import { FunctionsService } from '../services/functions.service';
   templateUrl: './contact-me.component.html',
   styleUrl: './contact-me.component.scss'
 })
+
 export class ContactMeComponent {
+
+message: Message = {
+  name: '',
+  email: '',
+  message: ''
+}
+
+submitForm(form: NgForm) {
+  if(form.valid && this.validPrivacyAcception) {
+    console.log("myEmail: ", this.functions.myEmail, "subject: ", this.functions.mailSubject, "body: ", this.message.message);
+    /* this.functions.sendEmail(this.functions.myEmail, this.functions.mailSubject, this.message.message) */
+  }
+}
 
   constructor(public functions:FunctionsService) { }
 
   checkboxChecked = false;
   checkboxHovered = false;
 
-  acceptHello = true;
+  validPrivacyAcception = true;
 
 setCheckbox() {
   if(this.checkboxChecked == false) {
     this.checkboxChecked = true;
-    this.acceptHello = true;
+    this.validPrivacyAcception = true;
   } else {
     this.checkboxChecked = false;
   };
@@ -30,9 +50,9 @@ setCheckbox() {
 
 checkAcception() {
   if(this.checkboxChecked) {
-    this.acceptHello = true;
+    this.validPrivacyAcception = true;
   } else {
-    this.acceptHello = false;
+    this.validPrivacyAcception = false;
   }
 }
 
