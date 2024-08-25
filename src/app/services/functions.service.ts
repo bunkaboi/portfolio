@@ -4,14 +4,23 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class FunctionsService {
+  
+constructor() {
+  this.responsive = window.innerWidth < 940;
+  window.addEventListener('resize', this.checkScreenSize.bind(this));
+}
 
-  constructor() { }
+private checkScreenSize() {
+  this.responsive = window.innerWidth < 940;
+}
 
   overlayRef: any = "";
 
-  inputName:string ="";
+  responsive = false;
+
+  /* inputName:string ="";
   inputEmail:string ="";
-  inputHelp:string ="";
+  inputHelp:string =""; */
   
   mailSubject = "I like to get in contact"
   

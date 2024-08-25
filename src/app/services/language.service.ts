@@ -116,4 +116,62 @@ setLanguageIndex() {
       projectNext: "Next Project"
     }
   ]
+
+  colleagues = [
+    {
+      headline: "Was meine Kollegen über mich sagen",
+      
+    },
+    {
+      headline: "What my colleagues say about me",
+      
+    }
+  ]
+
+  contactMe = [
+    {
+      contactme: "Was meine Kollegen über mich sagen",
+      headline: "Lass uns zusammen arbeiten",
+      problem: "Du hast ein Problem zu lösen?",
+      text: "Kontaktiere mich über dieses Formular. Ich bin daran interessiert von dir zu hören, deine Ideen zu erfahren und dich mit meiner Arbeit zu unterstützen.",
+      need: "Du suchst einen Frontend Entwickler?",
+      talk: "Lass uns miteinander sprechen!",
+      input1: "Wie ist dein Name?",
+      placeholder1: "Hier deinen Namen eintragen",
+      error1: "Ups, es scheint dein Name zu fehlen",
+      input2: "Wie lautet deine E-Mail?",
+      placeholder2: "deineMail@email.de",
+      error2: "Hoppla! Deine E-Mail Adresse muss bitte eingegeben werden",
+      input3: "Wie kann ich dir helfen?",
+      placeholder3: "Hallo Björn, ich bin interessiert an...",
+      error3: "Was benötigst du entwickelt?",
+      policy1: "Ich habe die",
+      policy2: "Datenschutzrichtlinie",
+      policy3: "gelesen und stimme der Verarbeitung meiner Daten gemäß den darin beschriebenen Bedingungen zu.",
+      policyError: "Bitte stimme der Datenschutzrichtlinie zu.",
+      helloBtn: "Sag Hallo"
+    },
+    {
+      contactme: "What my colleagues say about me",
+      headline: "Let's work together",
+      problem: "Got a problem to solve?",
+      text: "Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work.",
+      need: "Need a Frontend Developer?",
+      talk: "Let's talk!",
+      input1: "What's your name?",
+      placeholder1: "Your name goes here",
+      error1: "Oops! it seems your name is missing",
+      input2: "What's your email?",
+      placeholder2: "youremail@email.com",
+      error2: "Hoppla! your email is required",
+      input3: "How can I help you?",
+      placeholder3: "Hello Björn, I am interested in...",
+      error3: "What do you need to develop?",
+      policy1: "I've read the",
+      policy2: "privacy policy",
+      policy3: "and agree to the processing of my data as outlined.",
+      policyError: "Please accept the privacy policy.",
+      helloBtn: "Say Hello"
+    }
+  ]
 }

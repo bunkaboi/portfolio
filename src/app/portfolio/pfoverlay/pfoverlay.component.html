@@ -8,11 +8,8 @@
             </div>
             <div class="project-description">
                 <p class="headline-description">{{ language.portfolio[language.languageIndex].projectHeadline }}</p>
-                @if(language.languageIndex == 0) {
-                    <p class="text-description">{{ projectdata.projectlist[projectIndex].about_de }}</p>
-                } @else if (language.languageIndex == 1) {
-                    <p class="text-description">{{ projectdata.projectlist[projectIndex].about_en }}</p>
-                }
+                <p class="text-description">{{ projectdata.projectlist[projectIndex].about[language.languageIndex] }}</p>
+                
                 
                 <div class="tech-logos">
                     @for(item of projectdata.projectlist[projectIndex].technologies; track item.tech) {

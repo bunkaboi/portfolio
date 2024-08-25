@@ -1,69 +1,71 @@
 <div class="main-container">
     <h4>What my colleagues say about me</h4>
     <div class="slider-carousel">
-        
-        <div 
-        [ngClass]="{'animate-inactive-to-inactive': nextCardAnimation == true, 
-        'animate-inactive-to-active-reverse': previousCardAnimation == true}"
-        class="comment-container inactive-slide">
-            <p>{{ commentdata.commentsList[inactiveCommentIndexLeft].comment }}</p>
+
+        <div [ngClass]="{'animate-inactive-to-inactive': nextCardAnimation == true, 
+        'animate-inactive-to-active-reverse': previousCardAnimation == true}" class="comment-container inactive-slide">
+            <p>{{ commentdata.commentsList[inactiveCommentIndexLeft].comment[language.languageIndex] }}</p>
             <div class="signature">
                 <div class="line"></div>
                 <p>{{ commentdata.commentsList[inactiveCommentIndexLeft].name }} - {{
-                    commentdata.commentsList[inactiveCommentIndexLeft].jobtitle }}</p>
+                    commentdata.commentsList[inactiveCommentIndexLeft].jobtitle[language.languageIndex] }}</p>
             </div>
         </div>
 
-        <div 
-        [ngStyle]="{'display' : nextCardAnimation == true || previousCardAnimation == true ? 'flex' : 'none'}"
-        [ngClass]="{'fadeBox': nextCardAnimation == true, 
-        'fadeBox-reverse': previousCardAnimation == true}"
-        class="comment-container inactive-slide">
-            <p>{{ commentdata.commentsList[inactiveCommentIndexLeft].comment }}</p>
-            <div class="signature">
-                <div class="line"></div>
-                <p>{{ commentdata.commentsList[inactiveCommentIndexLeft].name }} - {{
-                    commentdata.commentsList[inactiveCommentIndexLeft].jobtitle }}</p>
-            </div>
-        </div>
-
-        <div 
-        [ngClass]="{'animate-active-to-inactive': nextCardAnimation == true, 
-        'animate-active-to-inactive-reverse': previousCardAnimation == true}"
-        class="comment-container active-slide">
-            <p>{{ commentdata.commentsList[activeCommentIndex].comment }}</p>
-            <div class="signature">
-                <div class="line"></div>
-                <p>{{ commentdata.commentsList[activeCommentIndex].name }} - {{
-                    commentdata.commentsList[activeCommentIndex].jobtitle }}</p>
-            </div>
-            
-        </div>
-
-        <div 
-        [ngClass]="{'animate-inactive-to-active': nextCardAnimation == true, 
-        'animate-inactive-to-inactive-reverse': previousCardAnimation == true}"
-        class="comment-container inactive-slide">
-            <p>{{ commentdata.commentsList[inactiveCommentIndexRight].comment }}</p>
+        <div [ngStyle]="{'display' : nextCardAnimation == true || previousCardAnimation == true ? 'flex' : 'none'}"
+            [ngClass]="{'fadeBox': nextCardAnimation == true, 
+        'fadeBox-reverse': previousCardAnimation == true}" class="comment-container inactive-slide">
+            @if(previousCardAnimation == true) {
+            <p>{{ commentdata.commentsList[inactiveCommentIndexRight].comment[language.languageIndex] }}</p>
             <div class="signature">
                 <div class="line"></div>
                 <p>{{ commentdata.commentsList[inactiveCommentIndexRight].name }} - {{
-                    commentdata.commentsList[inactiveCommentIndexRight].jobtitle }}</p>
+                    commentdata.commentsList[inactiveCommentIndexRight].jobtitle[language.languageIndex] }}</p>
+            </div>
+            } @else {
+            <p>{{ commentdata.commentsList[inactiveCommentIndexLeft].comment[language.languageIndex] }}</p>
+            <div class="signature">
+                <div class="line"></div>
+                <p>{{ commentdata.commentsList[inactiveCommentIndexLeft].name }} - {{
+                    commentdata.commentsList[inactiveCommentIndexLeft].jobtitle[language.languageIndex] }}</p>
+            </div>
+            }
+        </div>
+
+        <div [ngClass]="{'animate-active-to-inactive': nextCardAnimation == true, 
+        'animate-active-to-inactive-reverse': previousCardAnimation == true}" class="comment-container active-slide">
+            <p>{{ commentdata.commentsList[activeCommentIndex].comment[language.languageIndex] }}</p>
+            <div class="signature">
+                <div class="line"></div>
+                <p>{{ commentdata.commentsList[activeCommentIndex].name }} - {{
+                    commentdata.commentsList[activeCommentIndex].jobtitle[language.languageIndex] }}</p>
+            </div>
+
+        </div>
+
+        <div [ngClass]="{'animate-inactive-to-active': nextCardAnimation == true, 
+        'animate-inactive-to-inactive-reverse': previousCardAnimation == true}"
+            class="comment-container inactive-slide">
+            <p>{{ commentdata.commentsList[inactiveCommentIndexRight].comment[language.languageIndex] }}</p>
+            <div class="signature">
+                <div class="line"></div>
+                <p>{{ commentdata.commentsList[inactiveCommentIndexRight].name }} - {{
+                    commentdata.commentsList[inactiveCommentIndexRight].jobtitle[language.languageIndex] }}</p>
             </div>
         </div>
         <img src="./../../assets/quotes.svg" alt="">
     </div>
 
-<div class="navigation">
-    <div>
-        <img (click)="previousComment()" src="./../../assets/nav/arrow_left.svg" alt="">
+    <div class="navigation">
+        <div>
+            <img (click)="previousComment()" src="./../../assets/nav/arrow_left.svg" alt="">
+        </div>
+        @for(item of commentdata.commentsList; track item; let index = $index){
+        <div (click)="activeCommentIndex = index"
+            [ngClass]="{'active-dot': activeCommentIndex == index, 'inactive-dot': activeCommentIndex !== index}"
+            class="dot">
+        </div>
+        }
+        <img (click)="nextComment()" src="./../../assets/nav/arrow_right.svg" alt="">
     </div>
-    @for(item of commentdata.commentsList; track item; let index = $index){
-    <div (click)="activeCommentIndex = index"
-        [ngClass]="{'active-dot': activeCommentIndex == index, 'inactive-dot': activeCommentIndex !== index}"
-        class="dot">
-    </div>
-    }
-    <img (click)="nextComment()" src="./../../assets/nav/arrow_right.svg" alt="">
-</div>
 </div>

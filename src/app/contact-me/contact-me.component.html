@@ -1,37 +1,36 @@
 <div class="main-container">
     <div class="text-container">
-        <h5>Contact me</h5>
-        <h2>Let's work together</h2>
-        <h4>Got a problem to solve?</h4>
-        <p>Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to
-            your projects with my work.</p>
+        <h5>{{ language.contactMe[language.languageIndex].contactme }}</h5>
+        <h2>{{ language.contactMe[language.languageIndex].headline }}</h2>
+        <h4>{{ language.contactMe[language.languageIndex].problem }}</h4>
+        <p>{{ language.contactMe[language.languageIndex].text }}</p>
         <div class="lets-talk">
-            <p>Need a Frontend Developer?&nbsp;</p>
+            <p>{{ language.contactMe[language.languageIndex].need }}&nbsp;</p>
             <br>
             <br>
-            <p (click)="functions.sendEmail(functions.myEmail, functions.mailSubject, '')" class="link">Let's talk!</p>
+            <p (click)="functions.sendEmail(functions.myEmail, functions.mailSubject, '')" class="link">{{ language.contactMe[language.languageIndex].talk }}</p>
         </div>
     </div>
 
     <form #messageForm="ngForm" (ngSubmit)="submitForm(messageForm); messageForm.resetForm()">
 
         <div class="form-container">
-            <label for="name">What's your name?</label>
-            <input id="name" name="name" type="text" placeholder="Your name goes here" [(ngModel)]="message.name"
+            <label for="name">{{ language.contactMe[language.languageIndex].input1 }}</label>
+            <input id="name" name="name" type="text" placeholder="name.errors?.['minlength'] ? {{ language.contactMe[language.languageIndex].placeholder1 }} : {{ language.contactMe[language.languageIndex].error1 }}" [(ngModel)]="message.name"
                 #name="ngModel" required minlength="3">
-            <p *ngIf="name.errors?.['minlength']" class="warning">Oops! it seems your name is missing</p>
+            <p *ngIf="name.errors?.['minlength']" class="warning">{{ language.contactMe[language.languageIndex].error1 }}</p>
         </div>
         <div class="form-container">
-            <label for="email">What's your email?</label>
-            <input id="email" name="email" type="text" placeholder="youremail@email.com" [(ngModel)]="message.email"
+            <label for="email">{{ language.contactMe[language.languageIndex].input2 }}</label>
+            <input id="email" name="email" type="text" placeholder="{{ language.contactMe[language.languageIndex].placeholder2 }}" [(ngModel)]="message.email"
                 #email="ngModel" required pattern="_%±]+@[a-zA-Z0-9. -]+. [a-zA-Z]{2,}$">
-            <p *ngIf="email.errors?.['pattern']" class="warning">Hoppla! your email is required</p>
+            <p *ngIf="email.errors?.['pattern']" class="warning">{{ language.contactMe[language.languageIndex].error2 }}</p>
         </div>
         <div class="form-container">
-            <label for="help">How can I help you?</label>
-            <input id="help" name="help" type="text" placeholder="Hello Björn, I am interested in..."
+            <label for="help">{{ language.contactMe[language.languageIndex].input3 }}</label>
+            <input id="help" name="help" type="text" placeholder="{{ language.contactMe[language.languageIndex].placeholder3 }}"
                 [(ngModel)]="message.message" #msg="ngModel" required minlength="3">
-            <p *ngIf="msg.errors?.['minlength']" class="warning">What do you need to develop?</p>
+            <p *ngIf="msg.errors?.['minlength']" class="warning">{{ language.contactMe[language.languageIndex].error3 }}</p>
         </div>
 
         <div class="privacy-policy">
@@ -44,21 +43,20 @@
                 'cb-checked-hover' : checkboxChecked == true && checkboxHovered == true
             }">
                 </div>
-                <p>I've read the &nbsp;</p>
-                <a href="#privacypolicy">privacy policy&nbsp;</a>
-                <p>and agree to the processing of my data as outlined.</p>
+                <p>{{ language.contactMe[language.languageIndex].policy1 }} &nbsp;
+                <a href="#privacypolicy">{{ language.contactMe[language.languageIndex].policy2 }}&nbsp;</a>
+                {{ language.contactMe[language.languageIndex].policy3 }}</p>
             </div>
-            <p [ngStyle]="{opacity : validPrivacyAcception == false ? 1 : 0}" class="warning">Please accept the privacy
-                policy.
+            <p [ngStyle]="{opacity : validPrivacyAcception == false ? 1 : 0}" class="warning">{{ language.contactMe[language.languageIndex].policyError }}
             </p>
 
         </div>
         <button type="submit" [ngClass]="{'btn-style' : checkboxChecked == true, 'this-btn' : checkboxChecked == false}"
             class="btn-position">
             @if(checkboxChecked == true) {
-            <p class="marquee-effect btn-padding">Say Hello ;&#41;</p>
+            <p class="marquee-effect btn-padding">{{ language.contactMe[language.languageIndex].helloBtn }} ;&#41;</p>
             } @else {
-            <p class="btn-padding">Say Hello ;&#41;</p>
+            <p class="btn-padding">{{ language.contactMe[language.languageIndex].helloBtn }} ;&#41;</p>
             }
         </button>
     </form>

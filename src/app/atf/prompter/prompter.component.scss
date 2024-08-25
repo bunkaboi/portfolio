@@ -11,7 +11,7 @@
 
 marquee {
     font-family: Karla;
-    font-size: 38px;
+    font-size: $marqueeFontSize;
     color: $primary;
 
     ul {

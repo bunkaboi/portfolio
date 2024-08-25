@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { FunctionsService } from '../services/functions.service';
+import { LanguageService } from '../services/language.service';
 
 interface Message {
   name: string;
@@ -32,7 +33,9 @@ submitForm(form: NgForm) {
   }
 }
 
-  constructor(public functions:FunctionsService) { }
+
+
+  constructor(public functions: FunctionsService, public language: LanguageService) { }
 
   checkboxChecked = false;
   checkboxHovered = false;

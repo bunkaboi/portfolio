@@ -2,6 +2,8 @@
 @import './shared/fonts.scss';
 @import './shared/mixin.scss';
 @import './shared/animations.scss';
+@import './shared/fontsize.scss';
+
 @import '@angular/cdk/overlay-prebuilt.css';
 
 html {
@@ -18,17 +20,34 @@ body {
     max-width: 100%;
 }
 
+h1 {
+    font-family: Karla;
+    font-size: $h1FontSize;
+    font-weight: 700;
+    color: $atfWhite;
+    margin: 0;
+    text-align: center;
+}
+
 h5 {
     font-family: Karla;
-    font-size: 24px;
+    font-size: $h5FontSize;
     font-weight: 500;
     color: $primary;
     margin: 0;
 }
 
+h3 {
+    font-family: Fira Code;
+    font-size: $h3FontSize;
+    font-weight: 400;
+    color: $atfWhite;
+    margin: 0;
+}
+
 h4 {
     font-family: Fira Code;
-    font-size: 32px;
+    font-size: $h4FontSize;
     font-weight: 700;
     color: $primary;
     margin: 0;
@@ -36,25 +55,31 @@ h4 {
 
 h2 {
     font-family: Fira Code;
-    font-size: 64px;
+    font-size: $h2FontSize;
     font-weight: 700;
     color: $primary;
     margin: 0;
 }
 
 p {
+    font-family: Karla;
+    font-size: $mainFontSize;
     margin: 0;
 }
 
 a {
     text-decoration: none;
+    font-size: $smallerFontSize;
     color: $fontWhite;
 }
 
 svg,
 marquee,
 p,
+h1,
 h2,
+h3,
+h4,
 h5,
 span {
     cursor: default;
@@ -68,7 +93,7 @@ button {
     @include dFlex();
     @include borderStyling(100px, $fontWhite);
     font-family: Karla;
-    font-size: 18px;
+    font-size: $buttonFontSize;
     color: $fontWhite;
     overflow: hidden;
     cursor: pointer;
@@ -104,3 +129,28 @@ button {
     color: $primary;
 }
 
+@media (max-width: 720px) {
+    h1 {
+        font-size: $h1RespFontSize;
+    }
+
+    h2 {
+        font-size: $h2RespFontSize;
+    }
+
+    h3 {
+        font-size: $h3RespFontSize;
+    }
+
+    h4 {
+        font-size: $h4RespFontSize;
+    }
+
+    h5 {
+        font-size: $h5RespFontSize;
+    }
+
+    p {
+        font-size: $mainRespFontSize;
+    }
+}

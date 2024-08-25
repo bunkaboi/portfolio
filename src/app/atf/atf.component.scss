@@ -19,27 +19,11 @@
     @include dFlex();
     flex-direction: column;
 
-    .job {
-        font-family: Fira Code;
-        font-size: 40px;
-        color: $atfWhite;
-        margin: 0;
-    }
-
-    .name {
-        font-family: Karla;
-        font-weight: 700;
-        font-size: 128px;
-        color: $atfWhite;
-        margin: 0;
-    }
-
     .btn-container {
         margin-top: 48px;
         @include dFlex();
         gap: 56px;
         z-index: 1;
-        cursor: pointer;
     }
 }
 
@@ -47,15 +31,15 @@
     position: absolute;
     bottom: 0px;
     @include dFlex(space-between, flex-end);
-    width: calc(100vw - 192px);
-    max-width: 100%;
+    width: 100%;
 
     .arrow {
         @include size(auto, 312px);
         @include dFlex(space-between, center);
         flex-direction: column;
+        margin-left: 96px;
 
-        .btn-arrow {
+        .bouncing-arrow {
             @include size(30px, 48px);
             @include borderStyling(100px, $primary);
             @include dFlex();
@@ -64,101 +48,64 @@
                 animation: up-down-loop 1.5s infinite;
             }
         }
-
     }
 
     .contact {
         @include dFlex();
         flex-direction: column;
         gap: 24px;
+    }
 
-        .email {
-            writing-mode: vertical-lr;
-            transform: rotate(180deg);
+    .socialmedia {
+        @include size(auto, 76px);
+        @include dFlex(space-between, center);
+        flex-direction: column;
 
-            a {
-                text-decoration: none;
-                color: $fontWhite;
-                font-family: Karla;
+        .git-logo {
+            position: relative;
+            @include size(32px, 32px);
+            background-image: url('./../../assets/logos/Property\ 1=GitHub.svg');
+            cursor: pointer;
 
-                &:hover {
-                    color: $primary;
-                }
-            }
-        }
+            &:hover {
+                background-image: url('./../../assets/logos/Github_hover.svg');
 
-        .socialmedia {
-            @include size(auto, 76px);
-            @include dFlex(space-between, center);
-            flex-direction: column;
-
-            .git-logo {
-                position: relative;
-                @include size(32px, 32px);
-                background-image: url('./../../assets/logos/Property\ 1=GitHub.svg');
-                cursor: pointer;
-
-                &:hover {
-                    background-image: url('./../../assets/logos/Github_hover.svg');
-
-                    &:after {
-                        content: "";
-                        position: absolute;
-                        top: 50%;
-                        transform: translateY(-50%);
-                        right: - 15px;
-                        width: 8px;
-                        height: 8px;
-                        background-color: $primary;
-                        border-radius: 100%;
-                    }
-                }
-            }
-
-            .linkedIn-logo {
-                position: relative;
-                @include size(32px, 32px);
-                background-image: url('./../../assets/logos/Property 1=Linkedin.svg');
-                cursor: pointer;
-
-                &:hover {
-                    background-image: url('./../../assets/logos/Linkedin_hover.svg');
-
-                    &:after {
-                        content: "";
-                        position: absolute;
-                        top: 50%;
-                        transform: translateY(-50%);
-                        right: - 15px;
-                        width: 8px;
-                        height: 8px;
-                        background-color: $primary;
-                        border-radius: 100%;
-                    }
-                }
-            }
-
-            /* .sm-icon {
-                position: relative;
-
-                img {
-                    @include size(100%, auto);
-                    cursor: pointer;
-                }
-
-                .navdot {
-                    @include size(8px, 8px);
-                    background-color: $primary;
-                    border-radius: 100%;
+                &:after {
+                    content: "";
                     position: absolute;
                     top: 50%;
-                    right: -12px;
                     transform: translateY(-50%);
+                    right: - 15px;
+                    width: 8px;
+                    height: 8px;
+                    background-color: $primary;
+                    border-radius: 100%;
                 }
-            } */
+            }
         }
 
+        .linkedIn-logo {
+            position: relative;
+            @include size(32px, 32px);
+            background-image: url('./../../assets/logos/Property 1=Linkedin.svg');
+            cursor: pointer;
 
+            &:hover {
+                background-image: url('./../../assets/logos/Linkedin_hover.svg');
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: - 15px;
+                    width: 8px;
+                    height: 8px;
+                    background-color: $primary;
+                    border-radius: 100%;
+                }
+            }
+        }
     }
 }
 
@@ -167,4 +114,84 @@
     bottom: 62px;
     rotate: -3deg;
     overflow: hidden;
+}
+
+
+
+@media (min-width: 940px) {
+    .contact {
+        margin-right: 96px;
+
+        .email {
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+            position: relative;
+
+            p:after {
+                content: "b.augustin@hotmail.com";
+            }
+
+            p:hover {
+                color: $primary;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media (max-width: 940px) {
+    .contact {
+        margin-right: 16px;
+
+        .email {
+            margin-bottom: -16px;
+
+            p {
+                position: relative;
+                @include size(32px, 32px);
+                background-image: url('./../../assets/icons/Mail_primary.svg');
+                cursor: pointer;
+
+                &:hover {
+                    background-image: url('./../../assets/icons/Mail_hover.svg');
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        right: - 15px;
+                        width: 8px;
+                        height: 8px;
+                        background-color: $primary;
+                        border-radius: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .bottom-section {
+        .arrow {
+            margin-left: 16px;
+        }
+    }
+
+    .header {
+        top: 16px;
+    }
+
+    .title {
+        .btn-container {
+            gap: 24px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .title {
+            .btn-container {
+                gap: 4px;
+            }
+        }
+    }
 }

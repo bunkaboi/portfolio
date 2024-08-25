@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FunctionsService } from '../services/functions.service';
 import { LanguageService } from '../services/language.service';
+import { TechnologiesService } from '../services/technologies.service';
 
 @Component({
   selector: 'app-skill-set',
@@ -12,7 +13,7 @@ import { LanguageService } from '../services/language.service';
 })
 export class SkillSetComponent {
 
-  constructor(public language: LanguageService, public functions:FunctionsService) { }
+  constructor(public language: LanguageService, public functions:FunctionsService, public technologies: TechnologiesService) { }
 
   hover = false;
 

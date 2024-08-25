@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { CommentsService } from '../services/comments.service';
+import { LanguageService } from '../services/language.service';
 
 @Component({
   selector: 'app-colleagues',
@@ -11,15 +12,12 @@ import { CommentsService } from '../services/comments.service';
 })
 export class ColleaguesComponent {
 
-  constructor(public commentdata: CommentsService) { }
+  constructor(public commentdata: CommentsService, public language: LanguageService) { }
 
   activeCommentIndex = 1;
 
   inactiveCommentIndexLeft = 0;
   inactiveCommentIndexRight = 2;
-
-  activeColor = "red";
-  inactiveColor = "grey";
 
   nextCardAnimation = false;
   previousCardAnimation = false;
@@ -50,9 +48,6 @@ export class ColleaguesComponent {
     this.activeCommentIndex = this.activeCommentIndex % this.commentdata.commentsList.length;
     this.inactiveSlidesIndexes();
     }, 1000)
-    
-    
-    this.testlog();
   }
 
 
@@ -65,8 +60,6 @@ export class ColleaguesComponent {
     }
     this.inactiveSlidesIndexes();
     }, 1000) 
-    
-    this.testlog();
   }
 
   inactiveSlidesIndexes() {
@@ -80,14 +73,6 @@ export class ColleaguesComponent {
       this.inactiveCommentIndexLeft = 1;
       this.inactiveCommentIndexRight = 0;
     }
-  }
-
-  testlog() {
-    console.log('index active comment: ', this.activeCommentIndex);
-    console.log(' inactive left', this.activeCommentIndex - 1);
-    console.log(' inactive right', this.activeCommentIndex + 1);
-    console.log('nextCardAnimation = ', this.nextCardAnimation);
-    console.log('previousCardAnimation = ', this.previousCardAnimation);
   }
 
 }

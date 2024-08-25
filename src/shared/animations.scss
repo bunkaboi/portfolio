@@ -94,3 +94,115 @@
         transform: translate(3px, -3px);
     }
 }
+
+@keyframes slideEffect-ati {
+    0% {
+        transform: translateX(0);
+        @include size(358px, 360px);
+        background-color: rgba(61, 207, 182, 0.3);
+    }
+
+    100% {
+        transform: translateX(-512px);
+        @include size(358px, 248px);
+        background-color: rgba(61, 207, 182, 0.1);
+    }
+}
+
+@keyframes slideEffect-ita {
+    0% {
+        transform: translateX(0px);
+        @include size(358px, 248px);
+        background-color: rgba(61, 207, 182, 0.1);
+    }
+
+    100% {
+        transform: translateX(-512px);
+        @include size(358px, 360px);
+        background-color: rgba(61, 207, 182, 0.3);
+    }
+}
+
+@keyframes slideEffect-iti {
+    0% {
+        transform: translateX(0);
+        @include size(358px, 248px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-512px);
+        @include size(358px, 248px);
+        opacity: 0;
+    }
+}
+
+@keyframes slideEffect-iti-fadeBox {
+    0% {
+        transform: translateX(0);
+        @include size(358px, 248px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(-512px);
+        @include size(358px, 248px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideEffect-ati-reverse {
+    0% {
+        transform: translateX(0);
+        @include size(358px, 360px);
+        background-color: rgba(61, 207, 182, 0.3);
+    }
+
+    100% {
+        transform: translateX(512px);
+        @include size(358px, 248px);
+        background-color: rgba(61, 207, 182, 0.1);
+    }
+}
+
+@keyframes slideEffect-ita-reverse {
+    0% {
+        transform: translateX(0);
+        @include size(358px, 248px);
+        background-color: rgba(61, 207, 182, 0.1);
+    }
+
+    100% {
+        transform: translateX(512px);
+        @include size(358px, 360px);
+        background-color: rgba(61, 207, 182, 0.3);
+    }
+}
+
+@keyframes slideEffect-iti-reverse {
+    0% {
+        transform: translateX(0);
+        @include size(358px, 248px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(512px);
+        @include size(358px, 248px);
+        opacity: 0;
+    }
+}
+
+@keyframes slideEffect-iti-fadeBox-reverse {
+    0% {
+        transform: translateX(0);
+        @include size(358px, 248px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(512px);
+        @include size(358px, 248px);
+        opacity: 1;
+    }
+}
