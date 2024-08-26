@@ -1,0 +1,17 @@
+<div class="navmenu">
+    <div class="menu-container">
+        <ul>
+            <li><a (click)="functions.closeMenu()" href="#aboutme">{{ language.atf[language.languageIndex].AboutMe }}</a></li>
+            <li><a (click)="functions.closeMenu()" href="#skills">{{ language.atf[language.languageIndex].Skills }}</a></li>
+            <li><a (click)="functions.closeMenu()" href="#projects">{{ language.atf[language.languageIndex].Projects }}</a></li>
+        </ul>
+        <div (click)="language.langSwitch()" class="language-switch">
+            <div
+                [ngClass]="{'language-active': language.langEng == true, 'language-inactive': language.langEng == false}">
+                EN</div>
+            <div
+                [ngClass]="{'language-active': language.langDeu == true, 'language-inactive': language.langDeu == false}">
+                DE</div>
+        </div>
+    </div>
+</div>

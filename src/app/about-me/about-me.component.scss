@@ -2,7 +2,7 @@
 
 .main-container {
     @include dFlex(space-evenly, space-between);
-    height: 708px;
+    gap: 16px;
     margin-left: 112px;
     margin-right: 112px;
     margin-top: 144px;
@@ -12,14 +12,16 @@
         margin-bottom: 140px;
 
         .capa {
+            @include size(40vw, auto);
+            max-width: 568px;
             border-radius: 30px;
-            transform: translate(-42px,36px);
+            transform: translate(-8%, 8%);
             position: absolute;
-
         }
 
         .me {
-            @include size(568px, 568px);
+            @include size(40vw, auto);
+            max-width: 568px;
             object-fit: cover;
             border-radius: 30px;
             position: relative;
@@ -28,14 +30,14 @@
 
     .text-side {
 
-
         h5 {
             margin-bottom: 20px;
             margin-top: 80px;
         }
 
         .text-box {
-            @include size(568px, 568px);
+            @include size(40vw, auto);
+            max-width: 568px;
             @include borderStyling(30px, $primary);
             background-color: rgba(61, 207, 182, 0.1);
             padding: 32px;
@@ -81,5 +83,34 @@
             }
         }
     }
+}
 
+@media (max-width: 1200px) {
+    .main-container {
+        @include dFlex(space-evenly, center);
+        flex-direction: column;
+        gap: 40px;
+        margin-left: 16px;
+        margin-right: 16px;
+        margin-top: 100px;
+        margin-bottom: 100px;
+
+        .image-side {
+
+            .capa {
+                @include size(90vw, auto);
+            }
+
+            .me {
+                @include size(90vw, auto);
+            }
+        }
+
+        .text-side {
+
+            .text-box {
+                @include size(90vw, auto);
+            }
+        }
+    }
 }

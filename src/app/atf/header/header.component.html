@@ -1,16 +1,25 @@
 <div class="main-container">
     @if(functions.responsive) {
-        <div class="logo">
-            <div class="signet">
-                <svg width="64" height="48" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="0" y="0" width="64" height="48" rx="12" ry="12" fill="#3DCFB6" style="opacity: 50%" />
-                    <text x="9" y="40" font-family="Arial, sans-serif" font-size="43px" fill="#ffffff"
-                        letter-spacing="-9px">BA</text>
-                </svg>
-            </div>
+    <div class="logo">
+        <div class="signet">
+            <svg width="64" height="48" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="0" width="64" height="48" rx="12" ry="12" fill="#3DCFB6" style="opacity: 50%" />
+                <text x="9" y="40" font-family="Arial, sans-serif" font-size="43px" fill="#ffffff"
+                    letter-spacing="-9px">BA</text>
+            </svg>
         </div>
-        <div class="menu"></div>
-                
+    </div>
+    <div cdkOverlayOrigin #trigger="cdkOverlayOrigin" [class.open]="functions.menuOpen" (click)="functions.menuOpen = !functions.menuOpen"
+        class="menu"></div>
+
+    <ng-template cdkConnectedOverlay 
+    [cdkConnectedOverlayOrigin]="trigger" 
+    [cdkConnectedOverlayOpen]="functions.menuOpen"
+    (overlayOutsideClick)="functions.menuOpen = false"
+    [cdkConnectedOverlayHasBackdrop]="true">
+        <app-menu></app-menu>
+    </ng-template>
+
     } @else {
     <div class="navbar">
         <div (click)="language.langSwitch()" class="language-switch">

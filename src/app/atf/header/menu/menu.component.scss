@@ -1,0 +1,59 @@
+@import './../../../../styles.scss';
+@import './../header.component.scss';
+
+.navmenu {
+
+    @include dFlex();
+    @include size(60vw, auto);
+    max-width: 250px;
+    @include borderStyling(30px, $primary);
+    background: linear-gradient(210deg, $gradientGreen, $gradientGreen 20%, $background 60%);
+
+    .menu-container {
+        @include dFlex(flex-start, flex-start);
+        flex-direction: column;
+        padding: 16px;
+
+        a {
+            font-family: Fira Code;
+            font-size: $navFontSize;
+            font-weight: 400;
+            text-decoration: none;
+            color: $fontWhite;
+            margin-bottom: 24px;
+
+            &:hover {
+                color: $primary;
+            }
+        }
+
+        ul {
+            @include dFlex(space-between, flex-start);
+            flex-direction: column;
+            padding: 0;
+        }
+
+        ul li {
+            @include dFlex(center, flex-start);
+            flex-direction: column;
+            position: relative;
+
+        }
+
+        ul li:hover:before {
+            content: "";
+            position: absolute;
+            top: 28px;
+            background: $primary;
+            width: 8px;
+            height: 8px;
+            border-radius: 100%;
+            left: calc(50% + 8px);
+        }
+
+        .language-switch {
+            transform: translateY(-12px);
+            margin-bottom: 4px;
+        }
+    }
+}
