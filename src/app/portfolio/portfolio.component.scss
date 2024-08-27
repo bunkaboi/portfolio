@@ -16,7 +16,6 @@
     }
 
     .project-links-container {
-        
 
         .portfolio-container {
             display: flex;
@@ -27,7 +26,6 @@
             .project {
                 @include dFlex(space-between, center);
                 padding: 40px 32px 40px 32px;
-                font-family: Fira Code;
                 font-size: 24px;
                 font-weight: 700;
                 width: 100%;
@@ -49,13 +47,11 @@
 
             .preview-screen {
                 position: absolute;
-                right: 96px;
+                right: -400px;
                 
             }
         }
     }
-
-
 }
 
 .no-border {
