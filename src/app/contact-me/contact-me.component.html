@@ -54,9 +54,9 @@
         <button type="submit" [ngClass]="{'btn-style' : checkboxChecked == true, 'this-btn' : checkboxChecked == false}"
             class="btn-position">
             @if(checkboxChecked == true) {
-            <p class="marquee-effect btn-padding">{{ language.contactMe[language.languageIndex].helloBtn }} ;&#41;</p>
+            <span class="marquee-effect btn-padding">{{ language.contactMe[language.languageIndex].helloBtn }} ;&#41;</span>
             } @else {
-            <p class="btn-padding">{{ language.contactMe[language.languageIndex].helloBtn }} ;&#41;</p>
+            <span class="btn-padding">{{ language.contactMe[language.languageIndex].helloBtn }} ;&#41;</span>
             }
         </button>
     </form>

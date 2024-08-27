@@ -100,14 +100,14 @@ button {
     gap: 8px;
     text-wrap: nowrap;
 
-    p {
+    span {
         cursor: pointer;
     }
 
     &:hover {
         border-color: $primary;
 
-        p {
+        span {
             color: $primary;
         }
 
@@ -154,3 +154,5 @@ button {
         font-size: $mainRespFontSize;
     }
 }
+
+//media = 720, 1200, 400

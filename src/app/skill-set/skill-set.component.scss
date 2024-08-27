@@ -1,142 +1,181 @@
 @import './../../styles.scss';
 
 .main-container {
-    @include dFlex(space-between, space-between);
-    height: 708px;
-    
-    margin-right: 112px;
-    margin-top: 144px;
-
     background-image: url('./../../assets/images/19.\ Skill\ set\ Background.png');
     background-repeat: no-repeat;
-    background-size: contain;   
-    
+    background-size: contain;
 
-    .text-side {
-        margin-left: 96px;
-        
-        h5 {
-            margin-bottom: 20px;
-            
+    .container {
+        @include dFlex(space-evenly, space-between);
+        gap: 56px;
+        margin-left: 112px;
+        margin-right: 112px;
+        margin-top: 144px;
+        margin-bottom: 144px;
+
+        .text-side {
+
+            h5 {
+                margin-bottom: 20px;
+            }
+
+            .text-box {
+                @include size(40vw, auto);
+                max-width: 568px;
+                @include borderStyling(30px, $primary);
+                background-color: rgba(61, 207, 182, 0.1);
+                padding: 32px;
+                box-sizing: border-box;
+
+                h2 {
+                    margin-bottom: 40px;
+                }
+
+                p {
+                    line-height: 21.6px;
+                    text-align: justify;
+                    margin-bottom: 16px;
+                }
+
+                .another-skill {
+                    display: flex;
+                    text-wrap: nowrap;
+
+                    p {
+                        font-family: Fira Code;
+                        font-size: 24px;
+                        font-weight: 700;
+                    }
+
+                    .highlight {
+                        color: $primary;
+                    }
+                }
+
+                button {
+                    margin-top: 40px;
+                }
+            }
         }
 
-        .text-box {
-            @include size(568px, 568px);
-            @include borderStyling(30px, $primary);
-            background-color: rgba(61, 207, 182, 0.1);
-            padding: 32px;
-            box-sizing: border-box;
-            @include dFlex(space-between, flex-start);
-            flex-direction: column;
+        .logo-side {
+            @include dFlex(flex-start, space-between);
+            flex-wrap: wrap;
+            margin-top: 56px;
+            gap: 40px;
+            @include size(40vw, auto);
+            max-width: 568px;
 
-            h2 {
-                margin-bottom: 16px;
+            .proberty {
+                @include dFlex(flex-start, center);
+                flex-direction: column;
+                font-family: Fira Code;
+                font-size: 18px;
+                width: 100px;
+                height: 116px;
+                text-align: center;
+                gap: 8px;
+            }
+
+            .mindset:hover {
+                position: relative;
+
+                img {
+                    animation: scale-bottom-center 0.125s ease-in-out forwards;
+                }
+
+                p {
+                    color: $primary;
+                }
+            }
+        }
+
+        .bubble {
+            @include dFlex(space-evenly, center);
+            flex-direction: column;
+            @include size(188px, 129px);
+            background: $fontWhite;
+            border-radius: 16px;
+            position: absolute;
+            transform: translate(-50px, -260px);
+            padding: 8px;
+            box-sizing: border-box;
+
+            &::after {
+                content: "";
+                width: 0;
+                height: 0;
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                border-top: 20px solid $fontWhite;
+                position: absolute;
+                top: 100%;
+                left: 40px;
             }
 
             p {
                 font-family: Karla;
-                font-size: 18px;
-                line-height: 21.6px;
-                text-align: justify;
+                font-size: 16px;
+                color: $primary;
+                text-align: center;
             }
 
-            .another-skill {
-                display: flex;
+            .logo-box {
+                @include dFlex();
+                gap: 24px;
 
-                p {
-                    font-family: Fira Code;
-                    font-size: 24px;
+                .learning-logo {
+                    @include dFlex();
+                    flex-direction: column;
+                    font-size: 12px;
+                    text-align: center;
                     font-weight: 700;
                 }
+            }
+        }
+    }
+}
 
-                .highlight {
-                    color: $primary;
+@media (max-width: 1200px) {
+    .main-container {
+        background-size: cover;
+
+        .container {
+            @include dFlex(space-evenly, center);
+            flex-direction: column;
+            gap: 40px;
+            margin-left: 16px;
+            margin-right: 16px;
+            margin-top: 100px;
+            margin-bottom: 100px;
+
+            .text-side {
+
+                .text-box {
+                    @include size(90vw, auto);
+
+                    .another-skill {
+
+                        @media (max-width: 400px) {
+                            display: inherit;
+                        }
+
+                        p {
+                            font-size: 20px;
+                        }
+                    }
                 }
             }
 
-        }
-    }
-
-    .logo-side {
-        @include dFlex(flex-start, space-between);
-        flex-wrap: wrap;
-        @include size(632px, 500px);
-        margin-top: 56px;
-        gap: 72px;
-
-        .proberty {
-            @include dFlex(flex-start, center);
-            flex-direction: column;
-            font-family: Fira Code;
-            font-size: 18px;
-            width: 104px;
-            height: 116px;
-            text-align: center;
-            gap: 8px;
-        }
-
-        .mindset:hover {
-            position: relative;
-            img {
-                animation: scale-bottom-center 0.125s ease-in-out forwards;
-            }
-
-            p {
-                color: $primary;
-            }
-
-        }
-
-    }
-
-    .bubble {
-        @include dFlex(space-evenly, center);
-        flex-direction: column;
-        @include size(188px, 129px);
-        background: $fontWhite;
-        border-radius: 16px;
-        position: absolute;
-        transform: translate(-50px, -260px);
-        padding: 8px;
-        box-sizing: border-box;
-
-        &::after {
-            content: "";
-            width: 0;
-            height: 0;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-top: 20px solid $fontWhite;
-            position: absolute;
-            top: 100%;
-            left: 40px;
-        }
-
-        p {
-            font-family: Karla;
-            font-size: 16px;
-            color: $primary;
-            text-align: center;
-        }
-
-        .logo-box {
-            @include dFlex();
-            gap: 24px;
-
-            .learning-logo {
-                @include dFlex();
-                flex-direction: column;
-                font-size: 12px;
-                text-align: center;
-                font-weight: 700;
+            .logo-side {
+                @include dFlex(flex-start, space-between);
+                flex-wrap: wrap;
+                margin-top: 56px;
+                margin-right: 16px;
+                margin-left: 16px;
+                @include size(90vw, auto);
+                max-width: 568px;
             }
         }
     }
-
-    .btn-style {
-        width: 122px;
-    }
-
-    
-
 }

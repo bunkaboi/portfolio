@@ -1,50 +1,52 @@
 <div id="skills" class="main-container">
-
-    <div class="text-side">
-        <h5>{{ language.skillSet[language.languageIndex].Technologies }}</h5>
-        <div class="text-box">
-            <h2>{{ language.skillSet[language.languageIndex].SkillSet }}</h2>
-            <p>{{ language.skillSet[language.languageIndex].text1 }}
-            </p>
-            <div class="another-skill">
-                <p>{{ language.skillSet[language.languageIndex].sub1 }}&nbsp;</p>
-                <p class="highlight">{{ language.skillSet[language.languageIndex].sub2 }}</p>
+    <div class="container">
+        <div class="text-side">
+            <h5>{{ language.skillSet[language.languageIndex].Technologies }}</h5>
+            <div class="text-box">
+                <h2>{{ language.skillSet[language.languageIndex].SkillSet }}</h2>
+                <p>{{ language.skillSet[language.languageIndex].text1 }}
+                </p>
+                <br><br>
+                <div class="another-skill">
+                    <p>{{ language.skillSet[language.languageIndex].sub1 }}&nbsp;</p>
+                    <p class="highlight">{{ language.skillSet[language.languageIndex].sub2 }}</p>
+                </div>
+                <p>{{ language.skillSet[language.languageIndex].text2 }}
+                </p>
+                <button (click)="functions.sendEmail(functions.myEmail, functions.mailSubject, '')"
+                    class="btn-style btn-padding">
+                    <span class="marquee-effect">{{ language.skillSet[language.languageIndex].letsTalkBTN }}</span>
+                </button>
             </div>
-            <p>{{ language.skillSet[language.languageIndex].text2 }}
-            </p>
-            <button (click)="functions.sendEmail(functions.myEmail, functions.mailSubject, '')"
-                class="btn-style btn-padding">
-                <p class="marquee-effect">{{ language.skillSet[language.languageIndex].letsTalkBTN }}</p>
-            </button>
         </div>
-    </div>
 
-    <div class="logo-side">
-        @for(skill of technologies.skill; track skill.name; let lastSkill = $last){
-        @if(lastSkill) {
-        <div (mouseover)="hover=true" (mouseleave)="hover=false" class="proberty mindset">
-            <img src="{{ skill.imgPrimary }}" alt="">
-            <p>{{ language.skillSet[language.languageIndex].mindset }}</p>
-            <div id="infowindow" [ngStyle]="{'display': hover == true ? 'block' : 'none'}">
-                <div class="bubble">
-                    <p>{{ language.skillSet[language.languageIndex].interest }}</p>
+        <div class="logo-side">
+            @for(skill of technologies.skill; track skill.name; let lastSkill = $last){
+            @if(lastSkill) {
+            <div (mouseover)="hover=true" (mouseleave)="hover=false" class="proberty mindset">
+                <img src="{{ skill.imgPrimary }}" alt="">
+                <p>{{ language.skillSet[language.languageIndex].mindset }}</p>
+                <div id="infowindow" [ngStyle]="{'display': hover == true ? 'block' : 'none'}">
+                    <div class="bubble">
+                        <p>{{ language.skillSet[language.languageIndex].interest }}</p>
 
-                    <div class="logo-box">
-                        @for(interest of technologies.interest; track interest.name) {
-                        <div class="learning-logo">
-                            <img src="{{ interest.img4c }}" alt="">
-                            <p>{{ interest.name }}</p>
+                        <div class="logo-box">
+                            @for(interest of technologies.interest; track interest.name) {
+                            <div class="learning-logo">
+                                <img src="{{ interest.img4c }}" alt="">
+                                <p>{{ interest.name }}</p>
+                            </div>
+                            }
                         </div>
-                        }
                     </div>
                 </div>
             </div>
+            } @else {
+            <div class="proberty">
+                <img src="{{ skill.imgWhite }}" alt="">
+                <p>{{ skill.name }}</p>
+            </div>
+            }
+            }
         </div>
-        } @else {
-        <div class="proberty">
-            <img src="{{ skill.imgWhite }}" alt="">
-            <p>{{ skill.name }}</p>
-        </div>
-        }
-        }
     </div>

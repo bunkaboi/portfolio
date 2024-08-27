@@ -1,16 +1,18 @@
 @import './../../styles.scss';
 
 .main-container {
+    @include dFlex();
 
+    .container {
+    @include size(80vw, auto);
+    max-width: 1148px;
     margin: 96px;
-    margin-top: 144px;
 
     .text-container {
         font-family: Karla;
         font-size: 18px;
         margin-top: 40px;
         margin-bottom: 40px;
-        width: 456px;
     }
 
     .project-links-container {
@@ -18,8 +20,9 @@
 
         .portfolio-container {
             display: flex;
-            
             position: relative;
+            width: 60vw;                
+            max-width: 1000px;
 
             .project {
                 @include dFlex(space-between, center);
@@ -27,7 +30,7 @@
                 font-family: Fira Code;
                 font-size: 24px;
                 font-weight: 700;
-                width: 880px;
+                width: 100%;
                 max-height: 0px;
                 border: 1px solid $primary;
                 cursor: pointer;
@@ -46,7 +49,7 @@
 
             .preview-screen {
                 position: absolute;
-                left: calc(880px + 96px);
+                right: 96px;
                 
             }
         }
@@ -57,4 +60,5 @@
 
 .no-border {
     border: none;
+}
 }
