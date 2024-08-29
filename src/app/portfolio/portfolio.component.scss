@@ -4,61 +4,134 @@
     @include dFlex();
 
     .container {
-    @include size(80vw, auto);
-    max-width: 1148px;
-    margin: 96px;
+        @include size(80vw, auto);
+        max-width: 1148px;
+        margin: 96px;
 
-    .text-container {
-        font-family: Karla;
-        font-size: 18px;
-        margin-top: 40px;
-        margin-bottom: 40px;
-    }
+        .text-container {
+            font-family: Karla;
+            font-size: 18px;
 
-    .project-links-container {
-        
-
-        .portfolio-container {
-            display: flex;
-            position: relative;
-            width: 60vw;                
-            max-width: 1000px;
-
-            .project {
-                @include dFlex(space-between, center);
-                padding: 40px 32px 40px 32px;
-                font-family: Fira Code;
-                font-size: 24px;
-                font-weight: 700;
-                width: 100%;
-                max-height: 0px;
-                border: 1px solid $primary;
-                cursor: pointer;
-
-                &:hover {
-                    background-color: rgba(61, 207, 182, 0.3);
-                }
-
-                .proberties {
-                    @include dFlex();
-                    gap: 8px;
-                    font-family: Karla;
-                    font-size: 18px;
-                }
+            p {
+                margin-bottom: 40px;
             }
 
-            .preview-screen {
-                position: absolute;
-                right: 96px;
-                
+            h2 {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+        }
+
+        .project-links-container {
+
+            width: 80vw;
+            position: relative;
+
+            .portfolio-container {
+
+                width: 60%;
+                max-width: 1000px;
+
+                .project {
+                    @include dFlex(space-between, center);
+                    padding: 40px 32px 40px 32px;
+                    max-height: 0px;
+                    border: 1px solid $primary;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: rgba(61, 207, 182, 0.3);
+                    }
+
+                    h5 {
+                        font-family: Fira Code;
+                        font-weight: 700;
+                        width: 100%;
+                    }
+
+                    .proberties {
+                        @include dFlex();
+                        gap: 8px;
+                        font-family: Karla;
+                    }
+                }
+
+                .preview-screen {
+                    position: absolute;
+                    right: -0px;
+                }
             }
         }
     }
 
-
+    .no-border {
+        border: none;
+    }
 }
 
-.no-border {
-    border: none;
-}
+@media (max-width: 1200px) {
+    .main-container {
+        @include dFlex();
+
+        .container {
+            @include size(90vw, auto);
+            margin: 0;
+
+            .text-container {
+                margin-left: 16px;
+
+                h2 {
+                    margin-top: 16px;
+                    margin-bottom: 32px;
+                }
+            }
+
+            .project-links-container {
+
+                width: 98vw;
+                position: relative;
+
+                .portfolio-container {
+
+                    width: 100%;
+                    max-width: 1000px;
+
+                    .project {
+                        @include dFlex(center, flex-start);
+                        flex-direction: column;
+                        gap: 16px;
+                        width: 100%;
+                        max-height: 64px;
+                        border: 1px solid $primary;
+                        cursor: pointer;
+
+                        &:hover {
+                            background-color: rgba(61, 207, 182, 0.3);
+                        }
+
+                        h5 {
+                            font-family: Fira Code;
+                            font-weight: 700;
+                            width: 100%;
+                        }
+
+                        .proberties {
+                            @include dFlex(flex-start, flex-start);
+                            gap: 8px;
+                            font-family: Karla;
+                            flex-wrap: wrap;
+                        }
+                    }
+
+                    .preview-screen {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .no-border {
+            border: none;
+        }
+    }
 }

@@ -3,16 +3,16 @@
 
         <div class="text-container">
             <div class="project-title">
-                <p class="project-number">{{ projectdata.projectlist[projectIndex].number}}</p>
-                <p class="project-name">{{ projectdata.projectlist[projectIndex].name}}</p>
+                <h1>{{ projectdata.projectlist[projectdata.projectIndex].number}}</h1>
+                <h2>{{ projectdata.projectlist[projectdata.projectIndex].name}}</h2>
             </div>
             <div class="project-description">
-                <p class="headline-description">{{ language.portfolio[language.languageIndex].projectHeadline }}</p>
-                <p class="text-description">{{ projectdata.projectlist[projectIndex].about[language.languageIndex] }}</p>
+                <h5>{{ language.portfolio[language.languageIndex].projectHeadline }}</h5>
+                <p class="text-description">{{ projectdata.projectlist[projectdata.projectIndex].about[language.languageIndex] }}</p>
                 
                 
                 <div class="tech-logos">
-                    @for(item of projectdata.projectlist[projectIndex].technologies; track item.tech) {
+                    @for(item of projectdata.projectlist[projectdata.projectIndex].technologies; track item.tech) {
                     <div class="single-logo">
                         <img src="./../../../assets/logos/{{ item.icon }}" alt="">
                         <p>{{ item.tech }}</p>
@@ -29,7 +29,7 @@
                     
                 </div>
                 <div class="btn-style">
-                    <div (click)="functions.goToUrl(projectdata.projectlist[projectIndex].url)" class="btn-style btn-padding">
+                    <div (click)="functions.goToUrl(projectdata.projectlist[projectdata.projectIndex].url)" class="btn-style btn-padding">
                         <p class="marquee-effect">Live Test</p>
                         <img class="arrow-right-up" src="./../../../assets/nav/arrow_outward.svg" alt="">
                     </div>
@@ -48,16 +48,16 @@
                 alt="">
             <img 
             class="close" 
-            (click)="close()" 
+            (click)="portfolioFunctions.close()" 
             (mouseover)="hoverClose = true" 
             (mouseleave)="hoverClose = false" 
             [ngStyle]="{'display': hoverClose == true ? 'flex' : 'none'}"
             src="./../../../assets/nav/close.svg"
                 alt="">
 
-            <img src="./../../../assets/images/{{ projectdata.projectlist[projectIndex].img_frame }}" alt="">
+            <img id="img-frame" src="./../../../assets/images/{{ projectdata.projectlist[projectdata.projectIndex].img_frame }}" alt="">
 
-            <div (click)="nextProject()" class="next">
+            <div (click)="portfolioFunctions.nextProject()" class="next">
                 <p>{{ language.portfolio[language.languageIndex].projectNext }}</p>
                 <img src="./../../../assets/nav/arrow_forward.svg" alt="">
             </div>

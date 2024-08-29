@@ -141,7 +141,7 @@
         background-size: cover;
 
         .container {
-            @include dFlex(space-evenly, center);
+            @include dFlex(center, space-evenly);
             flex-direction: column;
             gap: 40px;
             margin-left: 16px;
@@ -171,10 +171,7 @@
                 @include dFlex(flex-start, space-between);
                 flex-wrap: wrap;
                 margin-top: 56px;
-                margin-right: 16px;
-                margin-left: 16px;
                 @include size(90vw, auto);
-                max-width: 568px;
             }
         }
     }

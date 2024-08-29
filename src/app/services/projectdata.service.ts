@@ -8,7 +8,7 @@ export class ProjectdataService {
 
   constructor(public language: LanguageService) { }
 
-
+  projectIndex:number = 0;
 
   projectlist = [
     {

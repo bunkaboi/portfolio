@@ -6,6 +6,7 @@ import { LanguageService } from '../services/language.service';
 import { CdkPortal, PortalModule } from '@angular/cdk/portal';
 import { Overlay, OverlayConfig, OverlayModule, OverlayRef } from '@angular/cdk/overlay';
 import { FunctionsService } from '../services/functions.service';
+import { PortfolioFunctionsService } from '../services/portfolio.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -16,7 +17,7 @@ import { FunctionsService } from '../services/functions.service';
 })
 export class PortfolioComponent {
 
-  constructor(public projectdata: ProjectdataService, public language: LanguageService, private overlay: Overlay, public functions: FunctionsService) {
+  constructor(public projectdata: ProjectdataService, public language: LanguageService, private overlay: Overlay, public portfolioFunctions: PortfolioFunctionsService, public functions: FunctionsService) {
   }
 
   @ViewChild(CdkPortal) portal!: CdkPortal;
@@ -27,14 +28,10 @@ export class PortfolioComponent {
       hasBackdrop: true
     })
 
-    this.functions.overlayRef = this.overlay.create(config);
-    this.functions.overlayRef.attach(this.portal);
-    this.functions.overlayRef.backdropClick().subscribe(() => this.functions.overlayRef.detach());
+    this.portfolioFunctions.overlayRef = this.overlay.create(config);
+    this.portfolioFunctions.overlayRef.attach(this.portal);
+    this.portfolioFunctions.overlayRef.backdropClick().subscribe(() => this.portfolioFunctions.overlayRef.detach());
   }
-
-  
-
-  projectIndex = 0;
 
   closeOverlay = false;
 

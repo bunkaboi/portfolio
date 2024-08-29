@@ -4,6 +4,7 @@ import { ProjectdataService } from '../../services/projectdata.service';
 import { LanguageService } from '../../services/language.service';
 import { FunctionsService } from '../../services/functions.service';
 import { OverlayModule } from '@angular/cdk/overlay';
+import { PortfolioFunctionsService } from '../../services/portfolio.service';
 
 @Component({
   selector: 'app-pfoverlay',
@@ -14,20 +15,13 @@ import { OverlayModule } from '@angular/cdk/overlay';
 })
 export class PfoverlayComponent {
 
-  constructor(public projectdata: ProjectdataService, public language: LanguageService, public functions: FunctionsService) { }
+  constructor(public projectdata: ProjectdataService, public language: LanguageService, public functions: FunctionsService, public portfolioFunctions: PortfolioFunctionsService) { }
 
   hoverClose = false;
 
-  @Input() projectIndex = 0;
 
-  nextProject() {
-    this.projectIndex++;
-    this.projectIndex = this.projectIndex % this.projectdata.projectlist.length;
-  }
 
-  close() {
-    this.functions.overlayRef.detach();
-  }
+  
 
 }
 

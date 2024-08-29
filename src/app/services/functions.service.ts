@@ -7,14 +7,14 @@ export class FunctionsService {
 
   constructor() {
     this.responsive = window.innerWidth < 940;
+    this.responsive1200 = window.innerWidth < 1200;
     window.addEventListener('resize', this.checkScreenSize.bind(this));
   }
 
   private checkScreenSize() {
     this.responsive = window.innerWidth < 940;
+    this.responsive1200 = window.innerWidth < 1200;
   }
-
-  overlayRef: any = "";
 
   menuOpen = false;
 
@@ -25,6 +25,7 @@ export class FunctionsService {
   }
 
   responsive = false;
+  responsive1200 = false;
 
   /* inputName:string ="";
   inputEmail:string ="";
