@@ -9,13 +9,13 @@
             </svg>
         </div>
     </div>
-    <div cdkOverlayOrigin #trigger="cdkOverlayOrigin" [class.open]="functions.menuOpen" (click)="functions.menuOpen = !functions.menuOpen"
+    <div cdkOverlayOrigin #trigger="cdkOverlayOrigin" [class.open]="atf.menuOpen" (click)="atf.menuOpen = !atf.menuOpen"
         class="menu"></div>
 
     <ng-template cdkConnectedOverlay 
     [cdkConnectedOverlayOrigin]="trigger" 
-    [cdkConnectedOverlayOpen]="functions.menuOpen"
-    (overlayOutsideClick)="functions.menuOpen = false"
+    [cdkConnectedOverlayOpen]="atf.menuOpen"
+    (overlayOutsideClick)="atf.menuOpen = false"
     [cdkConnectedOverlayHasBackdrop]="true">
         <app-menu></app-menu>
     </ng-template>

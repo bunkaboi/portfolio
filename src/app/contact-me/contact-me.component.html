@@ -8,7 +8,7 @@
             <p>{{ language.contactMe[language.languageIndex].need }}&nbsp;</p>
             <br>
             <br>
-            <p (click)="functions.sendEmail(functions.myEmail, functions.mailSubject, '')" class="link">{{ language.contactMe[language.languageIndex].talk }}</p>
+            <p (click)="mailservice.sendEmail(mailservice.myEmail, mailservice.mailSubject, '')" class="link">{{ language.contactMe[language.languageIndex].talk }}</p>
         </div>
     </div>
 
@@ -22,7 +22,7 @@
         </div>
         <div class="form-container">
             <label for="email">{{ language.contactMe[language.languageIndex].input2 }}</label>
-            <input id="email" name="email" type="text" placeholder="{{ language.contactMe[language.languageIndex].placeholder2 }}" [(ngModel)]="message.email"
+            <input id="email" name="email" type="text" placeholder="{{ language.contactMe[language.languageIndex].placeholder2 }}" [(ngModel)]="message.recipient"
                 #email="ngModel" required pattern="_%±]+@[a-zA-Z0-9. -]+. [a-zA-Z]{2,}$">
             <p *ngIf="email.errors?.['pattern']" class="warning">{{ language.contactMe[language.languageIndex].error2 }}</p>
         </div>

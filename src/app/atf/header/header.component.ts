@@ -5,6 +5,7 @@ import { FunctionsService } from '../../services/functions.service';
 import { CdkPortal, PortalModule } from '@angular/cdk/portal';
 import { Overlay, OverlayConfig, OverlayModule, OverlayRef } from '@angular/cdk/overlay';
 import { MenuComponent } from "./menu/menu.component";
+import { AtfService } from '../../services/atf.service';
 
 @Component({
   selector: 'app-header',
@@ -15,7 +16,7 @@ import { MenuComponent } from "./menu/menu.component";
 })
 export class HeaderComponent {
 
-  constructor(public language: LanguageService, public functions: FunctionsService, private overlay: Overlay) { }
+  constructor(public language: LanguageService, public functions: FunctionsService, private overlay: Overlay, public atf: AtfService) { }
 
 
 

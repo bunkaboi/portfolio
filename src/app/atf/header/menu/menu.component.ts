@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { LanguageService } from '../../../services/language.service';
 import { FunctionsService } from '../../../services/functions.service';
+import { AtfService } from '../../../services/atf.service';
 
 @Component({
   selector: 'app-menu',
@@ -12,6 +13,6 @@ import { FunctionsService } from '../../../services/functions.service';
 })
 export class MenuComponent {
 
-constructor(public language: LanguageService, public functions: FunctionsService) {}
+constructor(public language: LanguageService, public functions: FunctionsService, public atf: AtfService) {}
 
 }

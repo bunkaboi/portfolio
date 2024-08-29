@@ -16,29 +16,8 @@ export class FunctionsService {
     this.responsive1200 = window.innerWidth < 1200;
   }
 
-  menuOpen = false;
-
-  closeMenu() {
-    setTimeout(() => {
-      this.menuOpen = false;
-    }, 500)
-  }
-
   responsive = false;
   responsive1200 = false;
-
-  /* inputName:string ="";
-  inputEmail:string ="";
-  inputHelp:string =""; */
-
-  mailSubject = "I like to get in contact"
-
-  myEmail = 'b.augustin@hotmail.com';
-
-  sendEmail(myEmail: string, subject: string, body: string) {
-    let mailtoLink = `mailto:${myEmail}?subject=${subject}&body=${body}`;
-    window.location.href = mailtoLink;
-  }
 
   goToRef(ref: string) {
     window.location.href = ref;
@@ -47,4 +26,14 @@ export class FunctionsService {
   goToUrl(url: string) {
     window.open(url);
   }
+
+/*   mailSubject = "I like to get in contact"
+
+  myEmail = 'b.augustin@hotmail.com';
+
+  sendEmail(myEmail: string, subject: string, body: string) {
+    let mailtoLink = `mailto:${myEmail}?subject=${subject}&body=${body}`;
+    window.location.href = mailtoLink;
+  } */
+
 }

@@ -1,12 +1,12 @@
 import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PfoverlayComponent } from './pfoverlay/pfoverlay.component';
 import { ProjectdataService } from '../services/projectdata.service';
 import { LanguageService } from '../services/language.service';
 import { CdkPortal, PortalModule } from '@angular/cdk/portal';
 import { Overlay, OverlayConfig, OverlayModule, OverlayRef } from '@angular/cdk/overlay';
 import { FunctionsService } from '../services/functions.service';
-import { PortfolioFunctionsService } from '../services/portfolio.service';
+import { PortfolioService } from '../services/portfolio.service';
+import { PfoverlayComponent } from './pfoverlay/pfoverlay.component';
 
 @Component({
   selector: 'app-portfolio',
@@ -17,22 +17,21 @@ import { PortfolioFunctionsService } from '../services/portfolio.service';
 })
 export class PortfolioComponent {
 
-  constructor(public projectdata: ProjectdataService, public language: LanguageService, private overlay: Overlay, public portfolioFunctions: PortfolioFunctionsService, public functions: FunctionsService) {
+  constructor(public projectdata: ProjectdataService, public language: LanguageService, private overlay: Overlay, public portfolio: PortfolioService, public functions: FunctionsService) {
   }
 
   @ViewChild(CdkPortal) portal!: CdkPortal;
-  
-    openModal() {
+
+  openModal() {
     const config = new OverlayConfig({
       positionStrategy: this.overlay.position().global().centerHorizontally().centerVertically(),
       hasBackdrop: true
     })
 
-    this.portfolioFunctions.overlayRef = this.overlay.create(config);
-    this.portfolioFunctions.overlayRef.attach(this.portal);
-    this.portfolioFunctions.overlayRef.backdropClick().subscribe(() => this.portfolioFunctions.overlayRef.detach());
-  }
+    this.portfolio.overlayRef = this.overlay.create(config);
+    this.portfolio.overlayRef.attach(this.portal);
+    this.portfolio.overlayRef.backdropClick().subscribe(() => this.portfolio.overlayRef.detach());
+}
 
-  closeOverlay = false;
 
 }

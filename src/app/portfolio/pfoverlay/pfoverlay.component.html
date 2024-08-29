@@ -40,24 +40,24 @@
         <div class="right-container">
             <img 
             class="close" 
-            (mouseover)="hoverClose = true" 
-            (mouseleave)="hoverClose = false" 
+            (mouseover)="portfolio.hoverClose = true" 
+            (mouseleave)="portfolio.hoverClose = false" 
             style="margin: 19px;"
-            [ngStyle]="{'display': hoverClose == false ? 'flex' : 'none'}"
+            [ngStyle]="{'display': portfolio.hoverClose == false ? 'flex' : 'none'}"
             src="./../../../assets/nav/close_small.svg"
                 alt="">
             <img 
             class="close" 
-            (click)="portfolioFunctions.close()" 
-            (mouseover)="hoverClose = true" 
-            (mouseleave)="hoverClose = false" 
-            [ngStyle]="{'display': hoverClose == true ? 'flex' : 'none'}"
+            (click)="portfolio.close()" 
+            (mouseover)="portfolio.hoverClose = true" 
+            (mouseleave)="portfolio.hoverClose = false" 
+            [ngStyle]="{'display': portfolio.hoverClose == true ? 'flex' : 'none'}"
             src="./../../../assets/nav/close.svg"
                 alt="">
 
             <img id="img-frame" src="./../../../assets/images/{{ projectdata.projectlist[projectdata.projectIndex].img_frame }}" alt="">
 
-            <div (click)="portfolioFunctions.nextProject()" class="next">
+            <div (click)="portfolio.nextProject()" class="next">
                 <p>{{ language.portfolio[language.languageIndex].projectNext }}</p>
                 <img src="./../../../assets/nav/arrow_forward.svg" alt="">
             </div>

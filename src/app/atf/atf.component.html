@@ -9,7 +9,7 @@
             <button (click)="functions.goToRef('#projects')" class="btn-style btn-padding">
                 <span class="marquee-effect">{{ language.atf[language.languageIndex].checkBTN }}</span>
             </button>
-            <button (click)="functions.sendEmail(functions.myEmail, functions.mailSubject, '')" class="btn-style btn-padding">
+            <button (click)="mailservice.sendEmail(mailservice.myEmail, mailservice.mailSubject, '')" class="btn-style btn-padding">
                 <span class="marquee-effect">{{ language.atf[language.languageIndex].contactBTN }}</span>
             </button>
         </div>
@@ -31,7 +31,7 @@
         </div>
         <div class="contact">
             <div class="email">
-                <p (click)="functions.sendEmail(functions.myEmail, functions.mailSubject, '')"></p>
+                <p (click)="mailservice.sendEmail(mailservice.myEmail, mailservice.mailSubject, '')"></p>
             </div>
             <div class="socialmedia">
                 <div (click)="functions.goToUrl('https://www.github.com/BjoernAugustin/')" class="git-logo"></div>

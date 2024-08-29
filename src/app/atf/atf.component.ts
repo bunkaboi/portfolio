@@ -5,6 +5,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 import { CommonModule } from '@angular/common';
 import { FunctionsService } from '../services/functions.service';
 import { LanguageService } from '../services/language.service';
+import { EmailService } from '../services/email.service';
 
 
 @Component({
@@ -18,7 +19,7 @@ import { LanguageService } from '../services/language.service';
 
 export class AtfComponent {
 
-  constructor(public language: LanguageService, public functions:FunctionsService) { }
+  constructor(public language: LanguageService, public functions:FunctionsService, public mailservice: EmailService) { }
 
   hover = false;
 
