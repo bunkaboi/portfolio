@@ -6,7 +6,7 @@
     background-size: contain;
 
     .container {
-        @include dFlex(space-evenly, space-between);
+        @include dFlex(space-evenly, center);
         gap: 56px;
         margin-left: 112px;
         margin-right: 112px;
@@ -59,7 +59,7 @@
         }
 
         .logo-side {
-            @include dFlex(flex-start, space-between);
+            @include dFlex(flex-start, space-evenly);
             flex-wrap: wrap;
             margin-top: 56px;
             gap: 40px;
@@ -141,7 +141,7 @@
         background-size: cover;
 
         .container {
-            @include dFlex(center, space-evenly);
+            @include dFlex(center, center);
             flex-direction: column;
             gap: 40px;
             margin-left: 16px;
@@ -168,7 +168,7 @@
             }
 
             .logo-side {
-                @include dFlex(flex-start, space-between);
+                @include dFlex(flex-start, space-evenly);
                 flex-wrap: wrap;
                 margin-top: 56px;
                 @include size(90vw, auto);

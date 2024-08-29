@@ -2,9 +2,9 @@
 
 .main-container {
     @include dFlex();
+    box-sizing: border-box;
 
     .container {
-        @include size(80vw, auto);
         max-width: 1148px;
         margin: 96px;
 
@@ -74,11 +74,10 @@
         @include dFlex();
 
         .container {
-            @include size(90vw, auto);
             margin: 0;
 
             .text-container {
-                margin-left: 16px;
+                padding-left: 32px;
 
                 h2 {
                     margin-top: 16px;
@@ -87,23 +86,21 @@
             }
 
             .project-links-container {
-
-                width: 98vw;
+width: auto;
                 position: relative;
 
                 .portfolio-container {
 
                     width: 100%;
-                    max-width: 1000px;
 
                     .project {
                         @include dFlex(center, flex-start);
                         flex-direction: column;
                         gap: 16px;
-                        width: 100%;
                         max-height: 64px;
                         border: 1px solid $primary;
                         cursor: pointer;
+                        width: 100%;
 
                         &:hover {
                             background-color: rgba(61, 207, 182, 0.3);
@@ -112,7 +109,6 @@
                         h5 {
                             font-family: Fira Code;
                             font-weight: 700;
-                            width: 100%;
                         }
 
                         .proberties {
