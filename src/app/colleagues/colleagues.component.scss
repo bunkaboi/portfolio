@@ -34,7 +34,9 @@
 
         .fadeBox {
             animation: slideEffect-iti-fadeBox 1s ease-in-out forwards;
-            position: absolute; top: 135px; left: calc(100% + 72px);
+            position: absolute;
+            top: 135px;
+            left: calc(100% + 72px);
         }
 
         .animate-active-to-inactive-reverse {
@@ -51,7 +53,9 @@
 
         .fadeBox-reverse {
             animation: slideEffect-iti-fadeBox-reverse 1s ease-in-out forwards;
-            position: absolute; top: 135px; left: -512px;
+            position: absolute;
+            top: 135px;
+            left: -512px;
         }
 
         .comment-container {
@@ -116,6 +120,45 @@
 
         img {
             cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .main-container {
+
+        .slider-carousel {
+
+            img {
+                position: absolute;
+                top: 10%;
+                left: calc(50% - 358px / 2 - 75px);
+            }
+
+            .comment-container {
+
+                .signature {
+                    @include dFlex(center, flex-end);
+                    flex-direction: column;
+                    width: 100%;
+
+                    .line {
+                        background-color: transparent;
+                    }
+
+                    p {
+                        text-wrap: wrap;
+                    }
+                }
+            }
+
+            .active-slide {
+                background-color: rgba(61, 207, 182, 0.3);
+                width: 70vw;
+                height: 60vw;
+                margin-left: 12px;
+                margin-right: 12px;
+            }
         }
     }
 }

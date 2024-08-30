@@ -40,7 +40,7 @@
                 <p>{{ commentdata.commentsList[activeCommentIndex].name }} - {{
                     commentdata.commentsList[activeCommentIndex].jobtitle[language.languageIndex] }}</p>
             </div>
-
+            <img id="quotes" src="./../../assets/quotes.svg" alt="">
         </div>
 
         <div [ngClass]="{'animate-inactive-to-active': nextCardAnimation == true, 
@@ -53,7 +53,7 @@
                     commentdata.commentsList[inactiveCommentIndexRight].jobtitle[language.languageIndex] }}</p>
             </div>
         </div>
-        <img src="./../../assets/quotes.svg" alt="">
+        
     </div>
 
     <div class="navigation">

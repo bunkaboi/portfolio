@@ -8,16 +8,19 @@ export class FunctionsService {
   constructor() {
     this.responsive = window.innerWidth < 940;
     this.responsive1200 = window.innerWidth < 1200;
+    this.responsive600 = window.innerWidth < 600;
     window.addEventListener('resize', this.checkScreenSize.bind(this));
   }
 
   private checkScreenSize() {
     this.responsive = window.innerWidth < 940;
     this.responsive1200 = window.innerWidth < 1200;
+    this.responsive600 = window.innerWidth < 600;
   }
 
   responsive = false;
   responsive1200 = false;
+  responsive600 = false;
 
   goToRef(ref: string) {
     window.location.href = ref;
@@ -26,14 +29,5 @@ export class FunctionsService {
   goToUrl(url: string) {
     window.open(url);
   }
-
-/*   mailSubject = "I like to get in contact"
-
-  myEmail = 'b.augustin@hotmail.com';
-
-  sendEmail(myEmail: string, subject: string, body: string) {
-    let mailtoLink = `mailto:${myEmail}?subject=${subject}&body=${body}`;
-    window.location.href = mailtoLink;
-  } */
 
 }

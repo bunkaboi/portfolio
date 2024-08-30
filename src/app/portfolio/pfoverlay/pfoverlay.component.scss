@@ -9,7 +9,6 @@
     padding: 80px;
     z-index: 20;
     margin: 5%;
-    box-sizing: border-box;
 
     .text-container {
         width: 40%;
@@ -103,4 +102,109 @@
             }
         }
     }
+}
+
+@media (max-width: 940px) {
+    .main-window {
+        width: 100%;
+        margin: 0;
+        padding: 12px;
+
+        .resp-container {
+
+            @include dFlex(space-evenly, flex-end);
+            flex-direction: column;
+
+            .text-container {
+
+                @include dFlex(space-between, flex-start);
+                flex-direction: column;
+                width: auto;
+                height: auto;
+
+                .project-title {
+                    @include dFlex(center, flex-start);
+                    flex-direction: column;
+                    margin-bottom: 32px;
+
+                    h1 {
+                        color: $primary;
+                        font-size: 72px;
+                    }
+
+                    h2 {
+                        color: $fontWhite;
+                        letter-spacing: -3%;
+                        font-size: 56px;
+                    }
+                }
+
+                .project-description {
+
+
+                    h5 {
+                        font-family: Fira Code;
+                        font-weight: 700;
+                        font-size: 20px;
+                        margin-bottom: 20px;
+                    }
+
+                    .text-description {
+                        font-size: 18px;
+                        font-weight: 400;
+                        color: $fontWhite;
+                        margin-bottom: 32px;
+                    }
+
+                    .tech-logos {
+                        @include dFlex(space-between, center);
+                        margin-bottom: 40px;
+                        flex-wrap: wrap;
+                        gap: 8px;
+
+                        .single-logo {
+                            @include dFlex(flex-start, center);
+                            gap: 4px;
+                        }
+                    }
+                }
+
+                .btn-container {
+                    @include dFlex(space-between, center);
+                    margin-bottom: 25px;
+                }
+            }
+
+            .close {
+                cursor: pointer;
+                margin: 15px;
+            }
+
+            #img-frame {
+                width: 100%;
+            }
+
+            .next {
+                display: flex;
+                gap: 16px;
+                cursor: pointer;
+                font-size: 18px;
+                color: $primary;
+                margin-right: 11px;
+
+                p {
+                    cursor: pointer;
+                }
+
+                &:hover {
+                    color: $fontWhite;
+
+                    img {
+                        animation: scale-left-center 0.5 ease-in-out forwards;
+                    }
+                }
+            }
+        }
+    }
+
 }

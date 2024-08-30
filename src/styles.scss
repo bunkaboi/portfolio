@@ -15,9 +15,28 @@ body {
     box-sizing: border-box;
     background-color: $background;
     color: $fontWhite;
-    overflow-x: hidden;
+    overflow-x: none;
     width: 100vw;
     max-width: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 111, 77, 0.3);
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $gradientGreen;
+    -webkit-box-shadow: inset 0 0 6px $background;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: $primary;
 }
 
 h1 {
