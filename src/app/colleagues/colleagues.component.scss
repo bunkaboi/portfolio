@@ -135,30 +135,101 @@
                 left: calc(50% - 358px / 2 - 75px);
             }
 
+            .animate-active-to-inactive {
+                animation: none;
+            }
+
+            .animate-inactive-to-active {
+                animation: none;
+            }
+
+            .animate-inactive-to-inactive {
+                animation: none;
+            }
+
+            .fadeBox {
+                display: none;
+            }
+
+            .animate-active-to-inactive-reverse {
+                animation: none;
+            }
+
+            .animate-inactive-to-active-reverse {
+                animation: none;
+            }
+
+            .animate-inactive-to-inactive-reverse {
+                animation: none;
+            }
+
+            .fadeBox-reverse {
+                animation: none;
+                position: absolute;
+                top: 135px;
+                left: -512px;
+            }
+
             .comment-container {
+                @include dFlex(space-between, flex-start);
+                flex-direction: column;
+                @include borderStyling(32px, $primary);
+                padding: 40px;
+                font-family: Karla;
+                line-height: 21.6px;
 
                 .signature {
-                    @include dFlex(center, flex-end);
-                    flex-direction: column;
+                    @include dFlex();
                     width: 100%;
 
                     .line {
-                        background-color: transparent;
+                        background-color: $fontWhite;
+                        height: 1px;
+                        width: 100%;
+                        margin-right: 16px;
                     }
 
                     p {
-                        text-wrap: wrap;
+                        text-wrap: nowrap;
                     }
                 }
             }
 
             .active-slide {
                 background-color: rgba(61, 207, 182, 0.3);
-                width: 70vw;
-                height: 60vw;
-                margin-left: 12px;
-                margin-right: 12px;
+                @include size(358px, 360px);
             }
+
+            .inactive-slide {
+                display: none;
+            }
+        }
+
+
+
+        .comment-container {
+
+            .signature {
+                @include dFlex(center, flex-end);
+                flex-direction: column;
+                width: 100%;
+
+                .line {
+                    background-color: transparent;
+                }
+
+                p {
+                    text-wrap: wrap;
+                }
+            }
+        }
+
+        .active-slide {
+            background-color: rgba(61, 207, 182, 0.3);
+            width: 70vw;
+            height: 60vw;
+            margin-left: 12px;
+            margin-right: 12px;
         }
     }
 }

@@ -12,7 +12,7 @@
         </div>
     </div>
 
-    <form #messageForm="ngForm" (ngSubmit)="submitForm(messageForm); messageForm.resetForm()">
+    <form id="input-form" #messageForm="ngForm" (ngSubmit)="submitForm(messageForm); messageForm.resetForm()">
 
         <div class="form-container">
             <label for="name">{{ language.contactMe[language.languageIndex].input1 }}</label>
